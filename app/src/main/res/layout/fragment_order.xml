@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".ui.order.OrderFragment">
+
+    <ImageView
+        android:id="@+id/ivLogo"
+        android:layout_width="250dp"
+        android:src="@drawable/ic_emptyorder"
+        android:layout_height="251dp"/>
+
+    <TextView
+        android:layout_marginTop="32dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Riwayat Booking Kosong"
+        style="@style/TextView.PoppinsRegular20sp020202"/>
+
+    <TextView
+        android:layout_marginTop="6dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text="Sepertinya kamu belum pernah \n menerima order apapun disini"
+        style="@style/TextView.PoppinsRegular14sp8D92A3"/>
+
+    <Button
+        android:layout_marginTop="30dp"
+        android:layout_width="200dp"
+        android:textColor="@color/white"
+        android:layout_height="wrap_content"
+        android:text="Beranda"
+        android:textAllCaps="false"
+        style="@style/Button.Primary"/>
+
+</LinearLayout>
