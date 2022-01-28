@@ -22,4 +22,11 @@
         android:name="com.abdigunawan.muapartner.ui.profile.ProfileFragment"
         android:label="Profile"
         tools:layout="@layout/fragment_profile" />
+
+    <fragment
+        android:id="@+id/navigation_testimoni"
+        android:name="com.abdigunawan.muapartner.ui.testimoni.TestimoniFragment"
+        android:label="Testimoni"
+        tools:layout="@layout/fragment_testimoni" />
+
 </navigation>

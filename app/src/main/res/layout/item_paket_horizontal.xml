@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#fff"
+    android:id="@+id/cvPaketMua"
+    app:cardCornerRadius="10dp"
+    android:layout_margin="8dp"
+    android:outlineSpotShadowColor="#8D92A3"
+    app:cardElevation="8dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="134dp"
+            android:layout_gravity="center"
+            android:outlineSpotShadowColor="@color/white"
+            app:cardCornerRadius="14dp"
+            android:elevation="10dp">
+
+            <ImageView
+                android:id="@+id/ivProfilMua"
+                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:layout_height="170dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/iv_paket" />
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/tvNamaPaket"
+            style="@style/TextView.PoppinsMedium14sp202020"
+            android:text="Paket Wisuda"
+            android:layout_marginTop="6dp"
+            android:layout_marginStart="6dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/tvHarga"
+            style="@style/TextView.PoppinsReguler9sp8D92A3"
+            android:text="IDR. 289.000"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

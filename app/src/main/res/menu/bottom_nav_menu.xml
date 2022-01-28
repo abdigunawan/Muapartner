@@ -11,6 +11,13 @@
         android:icon="@drawable/bottom_nav_icon_order_selector"
         android:title="Order" />
 
+
+    <item
+        android:id="@+id/navigation_testimoni"
+        android:icon="@drawable/bottom_nav_icon_testimonial_selector"
+        android:title="Testimoni" />
+
+
     <item
         android:id="@+id/navigation_profile"
         android:icon="@drawable/bottom_nav_icon_profile_selector"
