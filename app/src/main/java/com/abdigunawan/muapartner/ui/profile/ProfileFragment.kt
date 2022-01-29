@@ -5,21 +5,17 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.abdigunawan.muapartner.R
-import com.abdigunawan.muapartner.databinding.FragmentProfileBinding
-import com.abdigunawan.muapartner.model.dummy.ProfilPaketModel
-import com.abdigunawan.muapartner.ui.profile.detail.DetailPaketActivity
-import com.abdigunawan.muapartner.ui.profile.paket.AddPaketActivity
+import com.abdigunawan.muapartner.ui.profile.makeupme.AboutActivity
+import com.abdigunawan.muapartner.ui.profile.makeupme.BeriMasukanActivity
+import com.abdigunawan.muapartner.ui.profile.pengaturanakun.EditPasswordActivity
+import com.abdigunawan.muapartner.ui.profile.pengaturanakun.EditProfilActivity
+import com.abdigunawan.muapartner.ui.profile.pengaturanakun.EditProfilPhotoActivity
+import com.abdigunawan.muapartner.ui.profile.pengaturanakun.paket.PaketActivity
 import kotlinx.android.synthetic.main.fragment_profile.*
 
 class ProfileFragment : Fragment() {
-    private var paketList : ArrayList<ProfilPaketModel> = ArrayList()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -32,6 +28,45 @@ class ProfileFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+
+        initListener()
+
+    }
+
+    private fun initListener() {
+
+        layoutUbahProfil.setOnClickListener {
+            val editProfil = Intent(activity, EditProfilActivity::class.java)
+            startActivity(editProfil)
+        }
+
+        layoutUbahPassword.setOnClickListener {
+            val editPassword = Intent(activity, EditPasswordActivity::class.java)
+            startActivity(editPassword)
+        }
+
+        layoutUbahFotoProfil.setOnClickListener {
+            val editFoto = Intent(activity, EditProfilPhotoActivity::class.java)
+            startActivity(editFoto)
+        }
+
+        layoutAturPaket.setOnClickListener {
+            val aturPaket = Intent(activity, PaketActivity::class.java)
+            startActivity(aturPaket)
+        }
+
+
+
+        layoutTentangMakeupme.setOnClickListener {
+            val aboutMakeupme = Intent(activity, AboutActivity::class.java)
+            startActivity(aboutMakeupme)
+        }
+
+        layoutBeriMasukan.setOnClickListener {
+            val beriMasukan = Intent(activity, BeriMasukanActivity::class.java)
+            startActivity(beriMasukan)
+        }
+
 
     }
 }

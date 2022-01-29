@@ -10,10 +10,28 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.noActionBar">
         <activity
+            android:name=".ui.profile.makeupme.BeriMasukanActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.profile.makeupme.AboutActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.profile.pengaturanakun.paket.PaketActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.profile.pengaturanakun.EditProfilPhotoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.profile.pengaturanakun.EditPasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.profile.pengaturanakun.EditProfilActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.profile.paket.AddPaketActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.profile.detail.DetailPaketActivity"
+            android:name=".ui.profile.detail.AturPaketActivity"
             android:exported="false" />
         <activity
             android:name=".ui.auth.SignInActivity"
