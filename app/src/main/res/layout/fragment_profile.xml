@@ -25,7 +25,8 @@
 
         <TextView
             android:id="@+id/textView11"
-            style="@style/TextView.PoppinsRegular18sp020202"
+            style="@style/TextView.PoppinsSemiBold16sp8020202"
+            android:textSize="22dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
@@ -351,6 +352,7 @@
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="64dp"
                 android:layout_marginBottom="32dp"
+                android:fontFamily="@font/poppins_medium"
                 android:background="@drawable/shape_rectangle_outline_8_fe9bb3"
                 android:text="Log Out"
                 android:textAllCaps="false"
