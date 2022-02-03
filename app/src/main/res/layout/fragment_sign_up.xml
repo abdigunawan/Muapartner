@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.auth.signup.SignUpActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="32dp"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:paddingVertical="24dp"
+            android:paddingHorizontal="32dp">
+
+            <ImageView
+                android:id="@+id/ivFotoProfil"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_picture_empty"
+                android:layout_width="110dp"
+                android:layout_height="110dp"/>
+
+            <TextView
+                android:layout_marginTop="16dp"
+                style="@style/TextView.PoppinsRegular16sp020202"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nama Lengkap" />
+
+            <EditText
+                android:id="@+id/etNamaLengkap"
+                style="@style/EditText.PoppinsRegular14sp8D92A3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType=""
+                android:layout_marginTop="6dp"
+                android:textColor="#020202"
+                android:background="@drawable/shape_rectangle_outline_8_020202"
+                android:hint="Masukkan nama lengkapmu"
+                android:padding="10dp" />
+
+            <TextView
+                android:layout_marginTop="16dp"
+                style="@style/TextView.PoppinsRegular16sp020202"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Email" />
+
+            <EditText
+                android:id="@+id/etEmail"
+                style="@style/EditText.PoppinsRegular14sp8D92A3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:textColor="#020202"
+                android:background="@drawable/shape_rectangle_outline_8_020202"
+                android:hint="Masukkan Emailmu"
+                android:inputType="textShortMessage"
+                android:padding="10dp" />
+
+            <TextView
+                android:layout_marginTop="16dp"
+                style="@style/TextView.PoppinsRegular16sp020202"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Password" />
+
+            <EditText
+                android:id="@+id/etPassword"
+                style="@style/EditText.PoppinsRegular14sp8D92A3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:textColor="#020202"
+                android:background="@drawable/shape_rectangle_outline_8_020202"
+                android:hint="Buat Passwordmu"
+                android:inputType="textPassword"
+                android:padding="10dp" />
+
+            <TextView
+                android:layout_marginTop="16dp"
+                style="@style/TextView.PoppinsRegular16sp020202"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="No. HP" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <EditText
+                    style="@style/EditText.PoppinsRegular14sp8D92A3"
+                    android:layout_width="50dp"
+                    android:text="+62"
+                    android:textAlignment="center"
+                    android:padding="10dp"
+                    android:layout_marginTop="6dp"
+                    android:editable="false"
+                    android:textColor="#1ABC9C"
+                    android:fontFamily="@font/poppins"
+                    android:background="@drawable/shape_rectangle_8_eeeeee"
+                    android:layout_height="wrap_content"/>
+
+                <EditText
+                    android:id="@+id/etNohp"
+                    android:layout_marginStart="8dp"
+                    style="@style/EditText.PoppinsRegular14sp8D92A3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#020202"
+                    android:layout_marginTop="6dp"
+                    android:background="@drawable/shape_rectangle_outline_8_020202"
+                    android:hint="Masukkan Nomor hpmu"
+                    android:inputType="textShortMessage"
+                    android:padding="10dp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_marginTop="16dp"
+                style="@style/TextView.PoppinsRegular16sp020202"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Alamat" />
+
+            <EditText
+                android:id="@+id/etAlamat"
+                style="@style/EditText.PoppinsRegular14sp8D92A3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:textColor="#020202"
+                android:background="@drawable/shape_rectangle_outline_8_020202"
+                android:hint="Masukkan Alamat lengkapmu"
+                android:padding="10dp" />
+            <TextView
+                android:layout_marginTop="16dp"
+                style="@style/TextView.PoppinsRegular16sp020202"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nomor Rumah" />
+
+            <EditText
+                android:id="@+id/etRumah"
+                android:layout_marginTop="6dp"
+                android:padding="10dp"
+                android:background="@drawable/shape_rectangle_outline_8_020202"
+                style="@style/EditText.PoppinsRegular14sp8D92A3"
+                android:hint="Masukkan Nomor Rumahmu"
+                android:textColor="#020202"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:layout_marginTop="16dp"
+                style="@style/TextView.PoppinsRegular16sp020202"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Kota" />
+
+            <Spinner
+                android:id="@+id/spinnerKota"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/style_spinner" />
+
+
+            <Button
+                android:id="@+id/btnSelanjutnya"
+                style="@style/Button.Primary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="32dp"
+                android:text="Selanjutnya"
+                android:textAllCaps="false"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

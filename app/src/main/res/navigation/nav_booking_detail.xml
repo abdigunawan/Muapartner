@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/fragmentDetailBooking"
+    android:id="@+id/nav_booking_detail">
+
+    <fragment android:id="@+id/fragmentDetailBooking"
+        android:name="com.abdigunawan.muapartner.ui.home.detail.DetailBookingFragment"
+        tools:layout="@layout/fragment_detail_booking">
+        <action
+            android:id="@+id/actionterimabooking"
+            app:destination="@id/fragmentTerimaBooking"/>
+    </fragment>
+
+    <fragment android:id="@+id/fragmentTerimaBooking"
+        android:name="com.abdigunawan.muapartner.ui.home.detail.AturJadwalFragment"
+        tools:layout="@layout/fragment_atur_jadwal">
+    </fragment>
+
+</navigation>

@@ -4,6 +4,6 @@
     android:padding="10dp"
     android:fontFamily="@font/poppins"
     android:textSize="14sp"
-    android:textColor="#8D92A3"
+    android:textColor="#020202"
     android:layout_height="match_parent">
 </TextView>

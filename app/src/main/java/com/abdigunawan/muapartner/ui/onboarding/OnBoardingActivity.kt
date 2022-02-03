@@ -9,7 +9,7 @@ import android.widget.TextView
 import androidx.viewpager.widget.ViewPager
 import com.abdigunawan.muapartner.R
 import com.abdigunawan.muapartner.model.OnBoardingData
-import com.abdigunawan.muapartner.ui.auth.SignInActivity
+import com.abdigunawan.muapartner.ui.auth.AuthActivity
 import com.google.android.material.tabs.TabLayout
 
 class OnBoardingActivity : AppCompatActivity() {
@@ -25,7 +25,7 @@ class OnBoardingActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         if(restorePrefData()){
-            val i = Intent(applicationContext, SignInActivity::class.java)
+            val i = Intent(applicationContext, AuthActivity::class.java)
             startActivity(i)
             finish()
         }
@@ -52,7 +52,7 @@ class OnBoardingActivity : AppCompatActivity() {
             }
             if (position == onBoardingData.size){
                 savePrefData()
-                val i = Intent(applicationContext, SignInActivity::class.java)
+                val i = Intent(applicationContext, AuthActivity::class.java)
                 startActivity(i)
                 finish()
             }
@@ -61,7 +61,7 @@ class OnBoardingActivity : AppCompatActivity() {
         skip?.setOnClickListener(){
             position = onBoardingData.size
             savePrefData()
-            val i = Intent(applicationContext, SignInActivity::class.java)
+            val i = Intent(applicationContext, AuthActivity::class.java)
             startActivity(i)
             finish()
         }

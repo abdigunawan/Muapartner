@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/fragmentSignin"
+    android:id="@+id/nav_auth">
+
+    <fragment android:id="@+id/fragmentSignin"
+        android:name="com.abdigunawan.muapartner.ui.auth.signin.SignInFragment"
+        tools:layout="@layout/fragment_sign_in">
+
+        <action
+            android:id="@+id/action_signup"
+            app:destination="@id/fragmentSignup"/>
+
+    </fragment>
+
+    <fragment android:id="@+id/fragmentSignup"
+        android:name="com.abdigunawan.muapartner.ui.auth.signup.SignUpFragment"
+        tools:layout="@layout/fragment_sign_up">
+
+        <action
+            android:id="@+id/action_signup_verif"
+            app:destination="@id/fragmentSignupVerif"/>
+
+    </fragment>
+
+    <fragment android:id="@+id/fragmentSignupVerif"
+        android:name="com.abdigunawan.muapartner.ui.auth.signup.SignUpVerifFragment"
+        tools:layout="@layout/fragment_sign_up_verif">
+
+        <action
+            android:id="@+id/action_signup_success"
+            app:destination="@id/fragmentSignupSuccess"/>
+
+    </fragment>
+
+    <fragment android:id="@+id/fragmentSignupSuccess"
+        android:name="com.abdigunawan.muapartner.ui.auth.signup.SignUpSuccessFragment"
+        tools:layout="@layout/fragment_sign_up_success">
+    </fragment>
+
+
+
+</navigation>

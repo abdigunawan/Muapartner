@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.abdigunawan.muapartner.R
+import kotlinx.android.synthetic.main.activity_about.*
 import kotlinx.android.synthetic.main.activity_paket.*
 import kotlinx.android.synthetic.main.layout_toolbar.*
 

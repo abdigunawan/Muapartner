@@ -4,27 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.auth.LoginActivity">
-
-    <include
-        android:id="@+id/include"
-        layout="@layout/layout_toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    tools:context=".ui.auth.signin.SignInFragment">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:background="@color/white"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="32dp"
+        android:background="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/include">
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/textView36"
@@ -40,7 +31,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/editText8"
+            android:id="@+id/etEmail"
             style="@style/EditText.PoppinsRegular14sp8D92A3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -66,7 +57,7 @@
             android:text="Password"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText8" />
+            app:layout_constraintTop_toBottomOf="@+id/etEmail" />
 
         <TextView
             android:id="@+id/textView37"
@@ -74,7 +65,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Belum Mendaftar?"
+            android:text="Ada Kendala?"
             android:textColor="#8D92A3"
             app:layout_constraintBottom_toTopOf="@+id/tvDaftar"
             tools:layout_editor_absoluteX="24dp" />
@@ -93,7 +84,7 @@
 
 
         <EditText
-            android:id="@+id/editText7"
+            android:id="@+id/etPassword"
             style="@style/EditText.PoppinsRegular14sp8D92A3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -102,7 +93,7 @@
             android:layout_marginEnd="24dp"
             android:background="@drawable/shape_rectangle_outline_8_020202"
             android:hint="Masukkan passwordmu"
-            android:inputType="textShortMessage|textPassword"
+            android:inputType="textPassword"
             android:padding="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -121,7 +112,23 @@
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText7" />
+            app:layout_constraintTop_toBottomOf="@+id/etPassword" />
+
+        <Button
+            android:id="@+id/btnSignUp"
+            style="@style/Button.Secondary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="24dp"
+            android:text="Buat Akun Baru"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnSignin" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

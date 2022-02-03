@@ -1,5 +1,6 @@
 package com.abdigunawan.muapartner.ui.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.abdigunawan.muapartner.R
 import com.abdigunawan.muapartner.model.dummy.HomeModel
+import com.abdigunawan.muapartner.ui.home.detail.DetailBookingActivity
 import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : Fragment(),HomeAdapter.ItemAdapterCallback {
@@ -46,7 +48,8 @@ class HomeFragment : Fragment(),HomeAdapter.ItemAdapterCallback {
     }
 
     override fun onClick(v: View, data: HomeModel) {
-        Toast.makeText(context, "Ini menu yang kamu klik "+ data.pelanggan, Toast.LENGTH_SHORT).show()
+        val detailmua = Intent(activity, DetailBookingActivity::class.java)
+        startActivity(detailmua)
     }
 
 }

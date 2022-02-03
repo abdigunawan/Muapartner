@@ -48,6 +48,7 @@
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="24dp"
+                android:textColor="#020202"
                 android:background="@drawable/shape_rectangle_outline_8_020202"
                 android:hint="Masukkan nama lengkapmu"
                 android:padding="10dp"
@@ -75,6 +76,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="8dp"
+                android:textColor="#020202"
                 android:layout_marginEnd="24dp"
                 android:background="@drawable/shape_rectangle_outline_8_020202"
                 android:hint="Masukkan Emailmu"
@@ -96,20 +98,43 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/editEmail" />
 
-            <EditText
-                android:id="@+id/editNomorHP"
-                style="@style/EditText.PoppinsRegular14sp8D92A3"
+            <LinearLayout
+                android:id="@+id/lytNmrHp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
-                android:layout_marginTop="8dp"
                 android:layout_marginEnd="24dp"
-                android:background="@drawable/shape_rectangle_outline_8_020202"
-                android:hint="Masukkan Nomor hpmu"
-                android:padding="10dp"
+                android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView16" />
+                app:layout_constraintTop_toBottomOf="@+id/textView16">
+
+                <EditText
+                    style="@style/EditText.PoppinsRegular14sp8D92A3"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:background="@drawable/shape_rectangle_8_eeeeee"
+                    android:editable="false"
+                    android:fontFamily="@font/poppins"
+                    android:padding="10dp"
+                    android:text="+62"
+                    android:textAlignment="center"
+                    android:textColor="#1ABC9C" />
+
+                <EditText
+                    android:id="@+id/etNohp"
+                    style="@style/EditText.PoppinsRegular14sp8D92A3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:textColor="#020202"
+                    android:layout_marginTop="6dp"
+                    android:background="@drawable/shape_rectangle_outline_8_020202"
+                    android:hint="Masukkan Nomor hpmu"
+                    android:inputType="textShortMessage"
+                    android:padding="10dp" />
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/textView17"
@@ -122,7 +147,7 @@
                 android:text="Alamat"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/editNomorHP" />
+                app:layout_constraintTop_toBottomOf="@id/lytNmrHp" />
 
             <EditText
                 android:id="@+id/editAlamat"
@@ -130,6 +155,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
+                android:textColor="#020202"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="24dp"
                 android:background="@drawable/shape_rectangle_outline_8_020202"
@@ -159,6 +185,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="8dp"
+                android:textColor="#020202"
                 android:layout_marginEnd="24dp"
                 android:background="@drawable/shape_rectangle_outline_8_020202"
                 android:hint="Masukkan Nomor Rumahmu"
