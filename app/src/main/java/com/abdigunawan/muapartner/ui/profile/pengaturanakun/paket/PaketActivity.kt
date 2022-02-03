@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.abdigunawan.muapartner.R
 import com.abdigunawan.muapartner.model.dummy.AturPaketModel
+import com.abdigunawan.muapartner.ui.profile.pengaturanakun.paket.add.AddPaketActivity
 import com.abdigunawan.muapartner.ui.profile.pengaturanakun.paket.detail.DetailPaketActivity
 import kotlinx.android.synthetic.main.activity_paket.*
 import kotlinx.android.synthetic.main.layout_toolbar.*
@@ -21,6 +22,7 @@ class PaketActivity : AppCompatActivity(),PaketAdapter.ItemAdapterCallback {
         setContentView(R.layout.activity_paket)
 
         initToolbar()
+        initListener()
         initDataDummy()
         var adapter = PaketAdapter(paketList, this)
         var layoutManager : RecyclerView.LayoutManager = GridLayoutManager(this,2)
@@ -48,9 +50,18 @@ class PaketActivity : AppCompatActivity(),PaketAdapter.ItemAdapterCallback {
         paketList.add(AturPaketModel("Paket Tamu Pernikahan","300000",""))
     }
 
+    private fun initListener() {
+
+        btnAdd.setOnClickListener {
+            val add = Intent(this, AddPaketActivity::class.java)
+            add.putExtra("title_request", "Add Paket")
+            startActivity(add)
+        }
+
+    }
+
     override fun onClick(v: View, data: AturPaketModel) {
         val detailpaket = Intent(this, DetailPaketActivity::class.java)
-        detailpaket.putExtra("page_request", 2)
         startActivity(detailpaket)
     }
 }

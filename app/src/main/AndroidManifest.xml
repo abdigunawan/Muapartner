@@ -15,6 +15,9 @@
         android:theme="@style/AppTheme.noActionBar"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".ui.profile.pengaturanakun.paket.add.AddPaketActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.profile.pengaturanakun.paket.detail.DetailPaketActivity"
             android:exported="false" />
         <activity
