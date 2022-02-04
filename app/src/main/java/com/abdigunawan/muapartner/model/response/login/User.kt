@@ -12,6 +12,9 @@ data class User(
     @SerializedName("created_at")
     val createdAt: String,
     @Expose
+    @SerializedName("status")
+    val status: String,
+    @Expose
     @SerializedName("email")
     val email: String,
     @Expose

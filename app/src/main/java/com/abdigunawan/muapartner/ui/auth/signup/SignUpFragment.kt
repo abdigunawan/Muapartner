@@ -11,6 +11,9 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.Toast
+import androidx.activity.result.ActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.core.view.isVisible
 import androidx.navigation.Navigation
 import com.abdigunawan.muapartner.R
 import com.abdigunawan.muapartner.model.request.RegisterRequest
@@ -19,6 +22,8 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.github.dhaval2404.imagepicker.ImagePicker
 import kotlinx.android.synthetic.main.fragment_sign_up.*
+import okhttp3.MediaType
+import okhttp3.RequestBody
 
 class SignUpFragment : Fragment() {
 
@@ -50,7 +55,7 @@ class SignUpFragment : Fragment() {
 
     private fun initListener() {
 
-        btnSelanjutnya.setOnClickListener {
+        btnSimpan.setOnClickListener {
 
             var namalengkap = etNamaLengkap.text.toString()
             var email = etEmail.text.toString()
@@ -59,6 +64,7 @@ class SignUpFragment : Fragment() {
             var alamat = etAlamat.text.toString()
             var norumah = etRumah.text.toString()
             var kota = spinnerKota.selectedItem.toString()
+            val role = ""
 
             if (namalengkap.isNullOrEmpty()) {
                 etNamaLengkap.error = "Masukkan Nama Dulu"
@@ -75,12 +81,13 @@ class SignUpFragment : Fragment() {
             } else if (alamat.isNullOrEmpty()) {
                 etAlamat.error = "Masukkan Alamat Dulu"
                 etAlamat.requestFocus()
-            }else if (norumah.isNullOrEmpty()) {
+            } else if (norumah.isNullOrEmpty()) {
                 etRumah.error = "Masukkan Nomor Rumah Dulu"
                 etRumah.requestFocus()
             } else if (kota.isNullOrEmpty()) {
                 Toast.makeText(context, "Pilih Kota Dulu", Toast.LENGTH_SHORT).show()
             } else {
+
                 var data = RegisterRequest(
                     namalengkap,
                     email,
@@ -91,8 +98,9 @@ class SignUpFragment : Fragment() {
                     kota,
                     gambar,
                     upload_sertifikat,
-                    ""
+                    role
                 )
+
 
                 var bundle = Bundle()
                 bundle.putParcelable("data", data)
@@ -123,11 +131,11 @@ class SignUpFragment : Fragment() {
                 .load(gambar)
                 .apply(RequestOptions.circleCropTransform())
                 .into(ivFotoProfil)
-        } else if (resultCode == ImagePicker.RESULT_ERROR) {
-            Toast.makeText(context, ImagePicker.getError(data),Toast.LENGTH_SHORT).show()
-        } else {
-            Toast.makeText(context, "Pilih Foto Dibatallan",Toast.LENGTH_SHORT).show()
-        }
 
+        } else if (resultCode == ImagePicker.RESULT_ERROR) {
+            Toast.makeText(context, ImagePicker.getError(data), Toast.LENGTH_SHORT).show()
+        } else {
+            Toast.makeText(context, "Pilih Foto Dibatallan", Toast.LENGTH_SHORT).show()
+        }
     }
 }

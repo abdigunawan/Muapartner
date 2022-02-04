@@ -12,6 +12,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.navigation.Navigation
+import cn.pedant.SweetAlert.SweetAlertDialog
 import com.abdigunawan.muapartner.MuaPartner
 import com.abdigunawan.muapartner.R
 import com.abdigunawan.muapartner.model.request.RegisterRequest
@@ -56,17 +57,16 @@ class SignUpVerifFragment : Fragment(), SignUpContract.View {
         btnSignupNow.isVisible = false
         btnSignupNow.setOnClickListener {
 
-//            data.let {
-//                it.upload_sertifikat = upload_sertifikat
-//            }
+            data.let {
+                it.upload_sertifikat = upload_sertifikat
+            }
 //
-//            presenter.submitRegister(data, data)
+            view?.let { it1 -> presenter.submitRegister(data, it1) }
 
-
-            Navigation.findNavController(it)
-                .navigate(R.id.action_signup_success, null)
-
-            (activity as AuthActivity).toolbarSignupSuccess()
+//            Navigation.findNavController(it)
+//                .navigate(R.id.action_signup_success, null)
+//
+//            (activity as AuthActivity).toolbarSignupSuccess()
         }
 
         ivSertifikat.setOnClickListener {
@@ -109,12 +109,8 @@ class SignUpVerifFragment : Fragment(), SignUpContract.View {
 
     }
 
-    override fun onRegisterSuccess(loginResponse: X0?, view: View) {
-        MuaPartner.getApp().setToken(loginResponse!!.token)
+    override fun onRegisterSuccess(loginResponse: X0, view: View) {
 
-        val gson = Gson()
-        val json = gson.toJson(loginResponse.user)
-        MuaPartner.getApp().setUser(json)
         Navigation.findNavController(view)
             .navigate(R.id.action_signup_success, null)
 
@@ -122,7 +118,10 @@ class SignUpVerifFragment : Fragment(), SignUpContract.View {
     }
 
     override fun onRegisterFailed(message: String) {
-        Toast.makeText(activity, "Pendaftaran Gagal", Toast.LENGTH_SHORT).show()
+        SweetAlertDialog(activity, SweetAlertDialog.ERROR_TYPE)
+            .setTitleText("Gagal Registrasi")
+            .setContentText(message)
+            .show()
     }
 
     override fun showLoading() {

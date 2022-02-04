@@ -1,12 +1,16 @@
 package com.abdigunawan.muapartner.ui
 
 import android.os.Bundle
+import android.view.View
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
 import androidx.navigation.Navigation
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
 import com.abdigunawan.muapartner.R
+import com.abdigunawan.muapartner.network.NetworkConnection
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -15,6 +19,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         val navView: BottomNavigationView = findViewById(R.id.nav_view)
 
+        netConnection()
 
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
@@ -27,5 +32,20 @@ class MainActivity : AppCompatActivity() {
         val navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main)
         NavigationUI.setupWithNavController(navView, navController)
 //        navView.setupWithNavController(navController)
+    }
+
+    private fun netConnection(){
+        val networkConnection = NetworkConnection(applicationContext)
+        networkConnection.observe(this, Observer { isConnected ->
+
+            if (isConnected) {
+                layoutDisconnected.visibility = View.GONE
+                layoutConnected.visibility = View.VISIBLE
+            }else {
+                layoutDisconnected.visibility = View.VISIBLE
+                layoutConnected.visibility = View.GONE
+            }
+
+        })
     }
 }

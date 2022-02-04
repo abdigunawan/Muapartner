@@ -1,5 +1,6 @@
 package com.abdigunawan.muapartner.ui.auth.signin
 
+import android.widget.Toast
 import com.abdigunawan.muapartner.network.HttpClient
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
@@ -29,8 +30,12 @@ class SignInPresenter (private val view:SignInContract.View) : SignInContract.Pr
                 {
                     view.dismissLoading()
 
-                    if (it.message.equals("Berhasil Login")) {
-                        it.x0.let { x0 -> view.onLoginSuccess(x0) }
+                    if (it.message == "Berhasil Login") {
+                        if (it.x0.user.status == "Verifikasi") {
+                            it.x0.let { x0 -> view.onLoginSuccess(x0) }
+                        } else if (it.x0.user.status == "Belum Diverifikasi") {
+                            view.onLoginFailed("Akun anda belum di verifikasi")
+                        }
                     } else {
                         view.onLoginFailed(it.message)
                     }

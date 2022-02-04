@@ -5,6 +5,7 @@ import android.os.Parcelable
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
+import okhttp3.RequestBody
 
 @Parcelize
 data class RegisterRequest(
@@ -37,5 +38,5 @@ data class RegisterRequest(
     var upload_sertifikat: Uri?=null,
     @Expose
     @SerializedName("roles")
-    var roles: String
+    var roles: String?
 ) : Parcelable

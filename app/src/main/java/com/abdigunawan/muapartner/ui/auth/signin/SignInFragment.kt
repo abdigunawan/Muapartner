@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import cn.pedant.SweetAlert.SweetAlertDialog
 import com.abdigunawan.muapartner.MuaPartner
 import com.abdigunawan.muapartner.R
 import com.abdigunawan.muapartner.model.response.login.X0
@@ -49,17 +50,13 @@ class SignInFragment : Fragment(),SignInContract.View {
             var email = etEmail.text.toString()
             var password = etPassword.text.toString()
 
-//            if (email.isNullOrEmpty()) {
-//                etEmail.error = "Masukin Email Dulu Dong"
-//            } else if (password.isNullOrEmpty()) {
-//                etPassword.error = "Masukin Password Dulu Dong"
-//            } else {
-//                presenter.submitLogin(email,password)
-//            }
-            val home = Intent(activity, MainActivity::class.java)
-            startActivity(home)
-            activity?.finish()
-
+            if (email.isNullOrEmpty()) {
+                etEmail.error = "Masukin Email Dulu Dong"
+            } else if (password.isNullOrEmpty()) {
+                etPassword.error = "Masukin Password Dulu Dong"
+            } else {
+                presenter.submitLogin(email,password)
+            }
         }
 
         tvDaftar.setOnClickListener {
@@ -75,18 +72,23 @@ class SignInFragment : Fragment(),SignInContract.View {
     }
 
     override fun onLoginSuccess(loginResponse: X0?) {
-        loginResponse?.let { MuaPartner.getApp().setToken(it.token) }
+        MuaPartner.getApp().setToken(loginResponse!!.token)
 
         val gson = Gson()
         val json = gson.toJson(loginResponse?.user)
         MuaPartner.getApp().setUser(json)
+
         val home = Intent(activity, MainActivity::class.java)
         startActivity(home)
         activity?.finish()
     }
 
     override fun onLoginFailed(message: String) {
-        Toast.makeText(activity, "Masukkan Username Atau Password Yang Benar", Toast.LENGTH_SHORT).show()
+//        Toast.makeText(activity, message, Toast.LENGTH_SHORT).show()
+        SweetAlertDialog(activity, SweetAlertDialog.ERROR_TYPE)
+            .setTitleText("Gagal Login")
+            .setContentText(message)
+            .show()
     }
 
     override fun showLoading() {
