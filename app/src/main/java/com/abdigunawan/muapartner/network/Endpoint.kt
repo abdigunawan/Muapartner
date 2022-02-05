@@ -2,6 +2,7 @@ package com.abdigunawan.muapartner.network
 
 import com.abdigunawan.muapartner.model.response.login.LoginResponse
 import com.abdigunawan.muapartner.model.response.login.X0
+import com.abdigunawan.muapartner.model.response.profile.paket.PaketMuaResponse
 import io.reactivex.Observable
 import okhttp3.Call
 import okhttp3.MultipartBody
@@ -31,4 +32,13 @@ interface Endpoint {
         @Part("roles") roles: RequestBody?
     ): Observable<LoginResponse<X0>>
 
+    @Multipart
+    @POST("produk/add")
+    fun addproduk (
+        @Part("nama_paket") nama_paket: RequestBody,
+        @Part("deskripsi") deskripsi: RequestBody,
+        @Part("produk") produk: RequestBody,
+        @Part("harga") harga: RequestBody,
+        @Part foto: MultipartBody.Part
+    ) : Observable<PaketMuaResponse>
 }

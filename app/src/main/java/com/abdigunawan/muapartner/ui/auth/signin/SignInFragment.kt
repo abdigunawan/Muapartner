@@ -75,7 +75,7 @@ class SignInFragment : Fragment(),SignInContract.View {
         MuaPartner.getApp().setToken(loginResponse!!.token)
 
         val gson = Gson()
-        val json = gson.toJson(loginResponse?.user)
+        val json = gson.toJson(loginResponse.user)
         MuaPartner.getApp().setUser(json)
 
         val home = Intent(activity, MainActivity::class.java)

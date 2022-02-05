@@ -4,6 +4,7 @@ import android.view.View
 import com.abdigunawan.muapartner.model.request.RegisterRequest
 import com.abdigunawan.muapartner.model.response.login.X0
 import com.abdigunawan.muapartner.network.HttpClient
+import com.abdigunawan.muapartner.utils.Helpers.getErrorBodyMessage
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
@@ -68,7 +69,7 @@ class SignUpPresenter (private val view: SignUpContract.View) : SignUpContract.P
                 },
                 {
                     view.dismissLoading()
-                    view.onRegisterFailed(it.message.toString())
+                    view.onRegisterFailed(it.getErrorBodyMessage())
                 })
         mCompositeDisposable!!.add(disposable)
     }

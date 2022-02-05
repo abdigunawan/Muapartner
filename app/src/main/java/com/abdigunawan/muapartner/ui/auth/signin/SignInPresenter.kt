@@ -2,6 +2,7 @@ package com.abdigunawan.muapartner.ui.auth.signin
 
 import android.widget.Toast
 import com.abdigunawan.muapartner.network.HttpClient
+import com.abdigunawan.muapartner.utils.Helpers.getErrorBodyMessage
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
@@ -41,7 +42,7 @@ class SignInPresenter (private val view:SignInContract.View) : SignInContract.Pr
                     }
                 },{
                     view.dismissLoading()
-                    view.onLoginFailed(it.message.toString())
+                    view.onLoginFailed(it.getErrorBodyMessage())
                 }
             )
         mCompositeDisposable!!.add(disposable)

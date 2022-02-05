@@ -11,9 +11,6 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.Toast
-import androidx.activity.result.ActivityResult
-import androidx.activity.result.contract.ActivityResultContracts
-import androidx.core.view.isVisible
 import androidx.navigation.Navigation
 import com.abdigunawan.muapartner.R
 import com.abdigunawan.muapartner.model.request.RegisterRequest
@@ -22,8 +19,6 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.github.dhaval2404.imagepicker.ImagePicker
 import kotlinx.android.synthetic.main.fragment_sign_up.*
-import okhttp3.MediaType
-import okhttp3.RequestBody
 
 class SignUpFragment : Fragment() {
 
@@ -86,8 +81,10 @@ class SignUpFragment : Fragment() {
                 etRumah.requestFocus()
             } else if (kota.isNullOrEmpty()) {
                 Toast.makeText(context, "Pilih Kota Dulu", Toast.LENGTH_SHORT).show()
+                spinnerKota.requestFocus()
+            } else if (gambar == null){
+                Toast.makeText(context, "Pilih foto Profil Dulu", Toast.LENGTH_SHORT).show()
             } else {
-
                 var data = RegisterRequest(
                     namalengkap,
                     email,
