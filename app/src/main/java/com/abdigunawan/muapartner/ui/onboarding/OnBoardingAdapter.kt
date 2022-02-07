@@ -8,7 +8,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.viewpager.widget.PagerAdapter
 import com.abdigunawan.muapartner.R
-import com.abdigunawan.muapartner.model.OnBoardingData
+import com.abdigunawan.muapartner.model.dummy.OnBoardingData
 
 class OnBoardingAdapter(private var context: Context, private var onBoardingDataList: List<OnBoardingData>) : PagerAdapter() {
     override fun getCount(): Int {

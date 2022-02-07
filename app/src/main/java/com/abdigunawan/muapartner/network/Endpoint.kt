@@ -2,9 +2,10 @@ package com.abdigunawan.muapartner.network
 
 import com.abdigunawan.muapartner.model.response.login.LoginResponse
 import com.abdigunawan.muapartner.model.response.login.X0
-import com.abdigunawan.muapartner.model.response.profile.paket.PaketMuaResponse
+import com.abdigunawan.muapartner.model.response.profile.paket.AddPaketResponse
+import com.abdigunawan.muapartner.model.response.profile.paket.GetPaketResponse
+import com.abdigunawan.muapartner.model.response.profile.paket.Produk
 import io.reactivex.Observable
-import okhttp3.Call
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import retrofit2.http.*
@@ -40,5 +41,8 @@ interface Endpoint {
         @Part("produk") produk: RequestBody,
         @Part("harga") harga: RequestBody,
         @Part foto: MultipartBody.Part
-    ) : Observable<PaketMuaResponse>
+    ) : Observable<AddPaketResponse>
+
+    @GET("produk/get")
+    fun getproduk() : Observable<GetPaketResponse>
 }

@@ -4,7 +4,7 @@ package com.abdigunawan.muapartner.model.response.profile.paket
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
-data class PaketMuaResponse(
+data class AddPaketResponse(
     @Expose
     @SerializedName("message")
     val message: String,

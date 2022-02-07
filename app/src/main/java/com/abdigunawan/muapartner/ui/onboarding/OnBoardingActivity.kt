@@ -8,7 +8,7 @@ import android.os.Bundle
 import android.widget.TextView
 import androidx.viewpager.widget.ViewPager
 import com.abdigunawan.muapartner.R
-import com.abdigunawan.muapartner.model.OnBoardingData
+import com.abdigunawan.muapartner.model.dummy.OnBoardingData
 import com.abdigunawan.muapartner.ui.auth.AuthActivity
 import com.google.android.material.tabs.TabLayout
 

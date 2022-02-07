@@ -11,6 +11,7 @@ import androidx.core.content.ContentProviderCompat.requireContext
 import cn.pedant.SweetAlert.SweetAlertDialog
 import com.abdigunawan.muapartner.R
 import com.abdigunawan.muapartner.model.request.AddPaketRequest
+import com.abdigunawan.muapartner.ui.profile.pengaturanakun.paket.PaketActivity
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.github.dhaval2404.imagepicker.ImagePicker
@@ -22,6 +23,7 @@ import java.security.AccessController.getContext
 
 class AddPaketActivity : AppCompatActivity(),AddPaketContract.View {
 
+    lateinit var addPaketRequest: AddPaketRequest
     lateinit var presenter : AddPaketPresenter
     var progressDialog: Dialog? = null
     var fotopaket: Uri?= null
