@@ -1,4 +1,4 @@
-package com.abdigunawan.muapartner.ui.profile.pengaturanakun.paket.add
+package com.abdigunawan.muapartner.ui.profile.pengaturanakun.paket.edit
 
 import android.app.Activity
 import android.app.Dialog
@@ -7,38 +7,38 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import androidx.core.content.ContentProviderCompat.requireContext
 import cn.pedant.SweetAlert.SweetAlertDialog
+import com.abdigunawan.muapartner.BuildConfig
 import com.abdigunawan.muapartner.R
 import com.abdigunawan.muapartner.model.request.AddPaketRequest
-import com.abdigunawan.muapartner.ui.profile.pengaturanakun.paket.PaketActivity
+import com.abdigunawan.muapartner.model.request.EditPaketRequest
+import com.abdigunawan.muapartner.model.response.profile.paket.Produk
+import com.abdigunawan.muapartner.ui.profile.pengaturanakun.paket.detail.DetailPaketActivity
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.github.dhaval2404.imagepicker.ImagePicker
-import kotlinx.android.synthetic.main.activity_add_paket.*
-import kotlinx.android.synthetic.main.activity_add_paket.btnSimpan
-import kotlinx.android.synthetic.main.fragment_sign_up.*
+import kotlinx.android.synthetic.main.activity_edit_paket.*
 import kotlinx.android.synthetic.main.layout_toolbar.*
-import java.security.AccessController.getContext
 
-class AddPaketActivity : AppCompatActivity(),AddPaketContract.View {
+class EditPaketActivity : AppCompatActivity(),EditPaketContract.View {
 
-    lateinit var addPaketRequest: AddPaketRequest
-    lateinit var presenter : AddPaketPresenter
+    private val produk by lazy { intent.getSerializableExtra("produk") as Produk }
+    lateinit var editPaketRequest: EditPaketRequest
+    lateinit var presenter : EditPaketPresenter
     var progressDialog: Dialog? = null
     var fotopaket: Uri?= null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_add_paket)
-        presenter = AddPaketPresenter(this)
+        setContentView(R.layout.activity_edit_paket)
+        presenter = EditPaketPresenter(this)
         initToolbar()
         initListener()
         initView()
     }
 
     private fun initToolbar() {
-        toolbar.title = "Tambah Paket"
+        toolbar.title = "Edit Paket"
         toolbar.subtitle = "Temukan Wajah Terbaikmu"
         toolbar.navigationIcon = resources.getDrawable(R.drawable.ic_arrow_back_020202, null)
         toolbar.setNavigationOnClickListener { onBackPressed() }
@@ -59,7 +59,7 @@ class AddPaketActivity : AppCompatActivity(),AddPaketContract.View {
 
             var namapaket = etNamaPaket.text.toString()
             var deskripsi = etDeskripsi.text.toString()
-            var produk = etProdukMakeup.text.toString()
+            var produkmua = etProdukMakeup.text.toString()
             var harga = etHarga.text.toString()
 
 
@@ -72,27 +72,37 @@ class AddPaketActivity : AppCompatActivity(),AddPaketContract.View {
             } else if (deskripsi.isNullOrEmpty()) {
                 etDeskripsi.error = "Masukkan Deskripsinya"
                 etDeskripsi.requestFocus()
-            } else if (produk.isNullOrEmpty()) {
+            } else if (produkmua.isNullOrEmpty()) {
                 etProdukMakeup.error = "Masukkan Produk yang kamu gunakan"
                 etProdukMakeup.requestFocus()
             } else if (fotopaket == null) {
                 Toast.makeText(this, "Pilih Foto Produk Dulu", Toast.LENGTH_SHORT).show()
             } else {
-                var data = AddPaketRequest(
+                var data = EditPaketRequest(
+                    produk.id.toString(),
                     namapaket,
                     deskripsi,
-                    produk,
+                    produkmua,
                     harga,
                     fotopaket
                 )
 
-                presenter.addPaket(data,it)
+                presenter.editPaket(data,it)
             }
         }
 
     }
 
     private fun initView(){
+        etNamaPaket.setText(produk.namaPaket)
+        etHarga.setText(produk.harga.toString())
+        etDeskripsi.setText(produk.deskripsi)
+        etProdukMakeup.setText(produk.produk)
+        val profilMua = BuildConfig.BASE_URL+"assets/img/mua/paket/" + produk.foto
+        Glide.with(this)
+            .load(profilMua)
+            .into(ivPaketFoto)
+
         progressDialog = Dialog(this)
         val dialogLayout = layoutInflater.inflate(R.layout.dialog_loader, null)
         progressDialog?.let {
@@ -119,13 +129,13 @@ class AddPaketActivity : AppCompatActivity(),AddPaketContract.View {
         }
     }
 
-
-    override fun onAddPaketSuccess(message: String) {
+    override fun onEditPaketSuccess(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
         finish()
+
     }
 
-    override fun onAddPaketFailed(message: String) {
+    override fun onEditPaketFailed(message: String) {
         SweetAlertDialog(this, SweetAlertDialog.ERROR_TYPE)
             .setTitleText("GAGAL")
             .setContentText(message)

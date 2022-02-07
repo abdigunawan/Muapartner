@@ -74,7 +74,6 @@ class PaketActivity : AppCompatActivity(),PaketAdapter.ItemAdapterCallback, Pake
 
         btnAdd.setOnClickListener {
             val add = Intent(this, AddPaketActivity::class.java)
-            add.putExtra("title_request", "Add Paket")
             startActivity(add)
         }
 
@@ -90,6 +89,12 @@ class PaketActivity : AppCompatActivity(),PaketAdapter.ItemAdapterCallback, Pake
         var layoutManager : RecyclerView.LayoutManager = GridLayoutManager(this,2)
         rcPaket.layoutManager = layoutManager
         rcPaket.adapter = adapter
+
+        if (getPaketResponse.produk.isNullOrEmpty()) {
+            paketKosong.visibility = View.VISIBLE
+        } else {
+            paketKosong.visibility = View.GONE
+        }
     }
 
     override fun onPaketFailed(message: String) {

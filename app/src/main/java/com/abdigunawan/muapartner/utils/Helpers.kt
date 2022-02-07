@@ -20,22 +20,29 @@ object Helpers {
     fun TextView.formatPrice(value : String) {
         this.text = getCurrendIDR(java.lang.Double.parseDouble(value))
     }
+
     fun getCurrendIDR(price : Double): String{
         val format = DecimalFormat("#,###,###")
         return "Rp "+format.format(price).replace(",".toRegex(),".")
     }
 
+    fun Long.convertLongToTime(formatTanggal: String): String {
+        val date = Date(this)
+        val format = SimpleDateFormat(formatTanggal)
+        return format.format(date)
+    }
+
     fun getDefaultGson() : Gson? {
         return GsonBuilder()
             .excludeFieldsWithoutExposeAnnotation()
-            .setDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'")
+            .setDateFormat(Cons.DATE_FORMAT_SERVER)
             .registerTypeAdapter(Date::class.java, JsonDeserializer { json, _, _ ->
-                val formatServer = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", Locale.ENGLISH)
+                val formatServer = SimpleDateFormat(Cons.DATE_FORMAT_SERVER, Locale.ENGLISH)
                 formatServer.timeZone = TimeZone.getTimeZone("UTC")
                 formatServer.parse(json.asString)
             })
             .registerTypeAdapter(Date::class.java, JsonSerializer<Date> { src, _, _ ->
-                val format = SimpleDateFormat("", Locale.ENGLISH)
+                val format = SimpleDateFormat(Cons.DATE_FORMAT_SERVER, Locale.ENGLISH)
                 format.timeZone = TimeZone.getTimeZone("UTC")
                 if (src != null) {
                     JsonPrimitive(format.format(src))
@@ -74,7 +81,7 @@ object Helpers {
                 if (parseErrorBody?.message == null) {
                     "Permintaan anda belum berhasil di proses. Silakan coba kembali"
                 } else {
-                    parseErrorBody?.message.toString()
+                    parseErrorBody.message.toString()
                 }
             }
 
@@ -88,7 +95,6 @@ object Helpers {
                 ""
             else
                 this.message!!
-
         }
     }
 }

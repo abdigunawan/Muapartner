@@ -15,6 +15,7 @@ import com.abdigunawan.muapartner.R
 import com.abdigunawan.muapartner.model.response.login.X0
 import com.abdigunawan.muapartner.ui.MainActivity
 import com.abdigunawan.muapartner.ui.auth.AuthActivity
+import com.abdigunawan.muapartner.utils.Cons
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.fragment_sign_in.*
 
@@ -66,7 +67,7 @@ class SignInFragment : Fragment(),SignInContract.View {
         }
         btnSignUp.setOnClickListener {
             val signup = Intent(activity, AuthActivity::class.java)
-            signup.putExtra("page_request", 2)
+            signup.putExtra("page_request", Cons.AUTH_SIGN_UP)
             startActivity(signup)
         }
     }

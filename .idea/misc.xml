@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/drawable-anydpi/ic_down.xml" value="0.2578125" />
+        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/drawable-v24/bottom_nav_icon_paket_selector.xml" value="0.2578125" />
+        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/drawable-xxhdpi/ic_picture_empty.xml" value="0.2578125" />
+        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/drawable/bottom_nav_icon_color_selector.xml" value="0.2578125" />
+        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/drawable/bottom_nav_icon_home_selector.xml" value="0.2578125" />
+        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/drawable/bottom_nav_icon_order_selector.xml" value="0.2578125" />
+        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/drawable/bottom_nav_icon_profile_selector.xml" value="0.2578125" />
+        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/drawable/bottom_nav_icon_testimonial_selector.xml" value="0.2578125" />
+        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/drawable/ic_alarmclock_fill.xml" value="0.2578125" />
+        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/drawable/ic_arrow_back_fff.xml" value="0.2578125" />
+        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/drawable/ic_calender.xml" value="0.2578125" />
+        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/drawable/ic_dropdown.xml" value="0.2578125" />
+        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/drawable/ic_emptyorder.xml" value="0.16354166666666667" />
+        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/drawable/ic_hello.xml" value="0.13541666666666666" />
+        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/drawable/ic_home_normal.xml" value="0.2578125" />
+        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/drawable/ic_homeactivity.xml" value="0.2578125" />
+        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/drawable/ic_online_wishes_list_bro_1.xml" value="0.2578125" />
+        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/drawable/ic_order_normal.xml" value="0.2578125" />
+        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/drawable/ic_orderactive.xml" value="0.2578125" />
+        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/drawable/ic_payment_information_cuate_1.xml" value="0.2578125" />
+        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/drawable/ic_picture_empty.xml" value="0.2578125" />
+        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/drawable/ic_profile_normal.xml" value="0.2578125" />
+        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/drawable/ic_setting_svgrepo_com.xml" value="0.2578125" />
+        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/drawable/indicator_selectoronboarding.xml" value="0.13541666666666666" />
+        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/drawable/shape_fab.xml" value="0.2578125" />
+        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/drawable/shape_rectangle_20_fff.xml" value="0.13541666666666666" />
+        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/drawable/shape_rectangle_40_fff.xml" value="0.2578125" />
+        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/drawable/shape_rectangle_8_8d92a3.xml" value="0.2578125" />
+        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/drawable/shape_rectangle_8_eeeeee.xml" value="0.2578125" />
+        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/drawable/shape_rectangle_outline_8_020202.xml" value="0.2578125" />
+        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/drawable/shape_rectangle_outline_8_FE9BB3.xml" value="0.2578125" />
+        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/drawable/shape_rectangle_outline_8_fe9bb3.xml" value="0.2578125" />
+        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/drawable/style_spinner.xml" value="0.2578125" />
+        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/drawable/unselected_onboarding.xml" value="0.13541666666666666" />
+        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/layout/activity_about.xml" value="0.4" />
+        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/layout/activity_add_paket.xml" value="0.264" />
+        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/layout/activity_auth.xml" value="0.24166666666666667" />
+        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/layout/activity_beri_masukan.xml" value="0.2" />
+        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/layout/activity_detail_booking.xml" value="0.4" />
+        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/layout/activity_detail_paket.xml" value="0.264" />
+        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/layout/activity_detail_paket2.xml" value="0.24166666666666667" />
+        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/layout/activity_edit_paket.xml" value="0.24166666666666667" />
+        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/layout/activity_edit_password.xml" value="0.264" />
+        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/layout/activity_edit_profil.xml" value="0.4" />
+        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/layout/activity_edit_profil_photo.xml" value="0.264" />
+        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/layout/activity_login.xml" value="0.264" />
+        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/layout/activity_main.xml" value="0.4" />
+        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/layout/activity_on_boarding.xml" value="0.152" />
+        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/layout/activity_paket.xml" value="0.2" />
+        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/layout/activity_sign_in.xml" value="0.264" />
+        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/layout/activity_sign_up.xml" value="0.4" />
+        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/layout/activity_sign_up_success.xml" value="0.24166666666666667" />
+        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/layout/activity_sign_up_verif.xml" value="0.264" />
+        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/layout/activity_splash_screen.xml" value="0.176" />
+        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/layout/dialog_loader.xml" value="0.24166666666666667" />
+        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/layout/fragment_atur_jadwal.xml" value="0.264" />
+        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/layout/fragment_detail_booking.xml" value="0.264" />
+        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/layout/fragment_home.xml" value="0.264" />
+        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/layout/fragment_order.xml" value="0.264" />
+        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/layout/fragment_paket.xml" value="0.24166666666666667" />
+        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/layout/fragment_paket_detail.xml" value="0.24166666666666667" />
+        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/layout/fragment_profile.xml" value="0.264" />
+        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/layout/fragment_sign_in.xml" value="0.2" />
+        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/layout/fragment_sign_up.xml" value="0.28454452405322417" />
+        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/layout/fragment_sign_up_success.xml" value="0.2" />
+        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/layout/fragment_sign_up_verif.xml" value="0.264" />
+        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/layout/fragment_terima_booking.xml" value="0.24166666666666667" />
+        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/layout/fragment_testimoni.xml" value="0.176" />
+        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/layout/item_paket_horizontal.xml" value="0.536" />
+        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/layout/item_paket_vertical.xml" value="0.264" />
+        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/layout/item_pesananmasuk.xml" value="0.6" />
+        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/layout/layout_spinner.xml" value="0.24166666666666667" />
+        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/layout/layout_toolbar.xml" value="0.23641304347826086" />
+        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/layout/onboarding_layout.xml" value="0.11927083333333334" />
+        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/menu/bottom_nav_menu.xml" value="0.24166666666666667" />
+        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/menu/itemsprofil_menu.xml" value="0.24166666666666667" />
+        <entry key="..\:/Users/abdig/AppData/Local/Android/Sdk/platforms/android-32/data/res/layout/simple_list_item_1.xml" value="0.24166666666666667" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

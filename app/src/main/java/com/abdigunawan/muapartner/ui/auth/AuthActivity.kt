@@ -6,6 +6,7 @@ import android.view.View
 import androidx.navigation.NavOptions
 import androidx.navigation.Navigation
 import com.abdigunawan.muapartner.R
+import com.abdigunawan.muapartner.utils.Cons
 import kotlinx.android.synthetic.main.layout_toolbar.*
 
 class AuthActivity : AppCompatActivity() {
@@ -14,7 +15,7 @@ class AuthActivity : AppCompatActivity() {
         setContentView(R.layout.activity_auth)
 
         val pageRequest = intent.getIntExtra("page_request", 0)
-        if (pageRequest == 2) {
+        if (pageRequest == Cons.AUTH_SIGN_UP) {
             toolbarSignup()
             val navOptions = NavOptions.Builder().setPopUpTo(R.id.fragmentSignin, true).build()
 

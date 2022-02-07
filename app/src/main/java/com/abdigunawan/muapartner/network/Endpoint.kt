@@ -3,6 +3,7 @@ package com.abdigunawan.muapartner.network
 import com.abdigunawan.muapartner.model.response.login.LoginResponse
 import com.abdigunawan.muapartner.model.response.login.X0
 import com.abdigunawan.muapartner.model.response.profile.paket.AddPaketResponse
+import com.abdigunawan.muapartner.model.response.profile.paket.EditPaketResponse
 import com.abdigunawan.muapartner.model.response.profile.paket.GetPaketResponse
 import com.abdigunawan.muapartner.model.response.profile.paket.Produk
 import io.reactivex.Observable
@@ -42,6 +43,22 @@ interface Endpoint {
         @Part("harga") harga: RequestBody,
         @Part foto: MultipartBody.Part
     ) : Observable<AddPaketResponse>
+
+    @Multipart
+    @POST("produk/update/{id}")
+    fun updateproduk (
+        @Path(value = "id") id_paket: String,
+        @Part("nama_paket") nama_paket: RequestBody,
+        @Part("deskripsi") deskripsi: RequestBody,
+        @Part("produk") produk: RequestBody,
+        @Part("harga") harga: RequestBody,
+        @Part foto: MultipartBody.Part?
+    ) : Observable<EditPaketResponse>
+
+    @DELETE("produk/delete/{id}")
+    fun deleteproduk (
+        @Path(value = "id") id_paket: String,
+    ) : Observable<EditPaketResponse>
 
     @GET("produk/get")
     fun getproduk() : Observable<GetPaketResponse>

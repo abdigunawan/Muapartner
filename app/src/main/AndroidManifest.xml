@@ -15,6 +15,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.noActionBar"
         android:usesCleartextTraffic="true">
+
+        <activity
+            android:name=".ui.profile.pengaturanakun.paket.edit.EditPaketActivity"
+            android:exported="false" />
         <activity
             android:name=".ui.profile.pengaturanakun.paket.add.AddPaketActivity"
             android:exported="false" />
@@ -26,15 +30,6 @@
             android:exported="false" />
         <activity
             android:name=".ui.auth.AuthActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.auth.signup.SignUpSuccessActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.auth.signup.SignUpVerifActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.auth.signup.SignUpActivity"
             android:exported="false" />
         <activity
             android:name=".ui.profile.makeupme.BeriMasukanActivity"
@@ -55,24 +50,13 @@
             android:name=".ui.profile.pengaturanakun.EditProfilActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.profile.paket.AddPaketActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.profile.detail.AturPaketActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.auth.signin.SignInActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.auth.LoginActivity"
-            android:exported="false" />
-        <activity
             android:name=".ui.MainActivity"
             android:exported="false"
             android:label="@string/title_activity_main" />
         <activity
             android:name=".ui.onboarding.OnBoardingActivity"
             android:exported="false" />
+
         <activity
             android:name=".ui.splashscreen.SplashScreenActivity"
             android:exported="true">
@@ -82,9 +66,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".MainActivity"
-            android:exported="true" />
+
 
         <meta-data
             android:name="preloaded_fonts"

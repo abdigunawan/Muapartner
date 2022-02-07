@@ -27,6 +27,43 @@
         app:layout_constraintTop_toBottomOf="@+id/include"
         tools:listitem="@layout/item_paket_vertical" />
 
+    <LinearLayout
+        android:id="@+id/paketKosong"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/white"
+        android:layout_marginTop="32dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/include">
+
+        <ImageView
+            android:id="@+id/ivLogo"
+            android:layout_width="250dp"
+            android:layout_marginTop="64dp"
+            android:layout_height="251dp"
+            android:src="@drawable/ic_empty_cuate" />
+
+        <TextView
+            style="@style/TextView.PoppinsRegular20sp020202"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Upsss!! Paketmu Kosong" />
+
+        <TextView
+            style="@style/TextView.PoppinsRegular14sp8D92A3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="sepertinya kamu \n belum pernah menambah paket"
+            android:textAlignment="center" />
+
+    </LinearLayout>
+
     <ImageView
         android:id="@+id/btnAdd"
         android:layout_width="60dp"
