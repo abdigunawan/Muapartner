@@ -75,8 +75,6 @@ class EditPaketActivity : AppCompatActivity(),EditPaketContract.View {
             } else if (produkmua.isNullOrEmpty()) {
                 etProdukMakeup.error = "Masukkan Produk yang kamu gunakan"
                 etProdukMakeup.requestFocus()
-            } else if (fotopaket == null) {
-                Toast.makeText(this, "Pilih Foto Produk Dulu", Toast.LENGTH_SHORT).show()
             } else {
                 var data = EditPaketRequest(
                     produk.id.toString(),

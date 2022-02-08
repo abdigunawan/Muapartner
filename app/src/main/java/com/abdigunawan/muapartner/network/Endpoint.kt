@@ -29,7 +29,7 @@ interface Endpoint {
         @Part("alamat") alamat: RequestBody,
         @Part("no_rumah") no_rumah: RequestBody,
         @Part("kota") kota: RequestBody,
-        @Part gambar: MultipartBody.Part,
+        @Part gambar: MultipartBody.Part?,
         @Part upload_sertifikat: MultipartBody.Part,
         @Part("roles") roles: RequestBody?
     ): Observable<LoginResponse<X0>>

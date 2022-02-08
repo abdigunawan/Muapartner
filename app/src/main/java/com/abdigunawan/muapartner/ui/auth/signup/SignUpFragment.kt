@@ -82,8 +82,6 @@ class SignUpFragment : Fragment() {
             } else if (kota.isNullOrEmpty()) {
                 Toast.makeText(context, "Pilih Kota Dulu", Toast.LENGTH_SHORT).show()
                 spinnerKota.requestFocus()
-            } else if (gambar == null){
-                Toast.makeText(context, "Pilih foto Profil Dulu", Toast.LENGTH_SHORT).show()
             } else {
                 var data = RegisterRequest(
                     namalengkap,

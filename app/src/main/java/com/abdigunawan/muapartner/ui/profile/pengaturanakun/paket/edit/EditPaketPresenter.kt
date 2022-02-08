@@ -26,33 +26,62 @@ class EditPaketPresenter(private val view: EditPaketContract.View) : EditPaketCo
         var deskripsi = RequestBody.create(MediaType.parse("text/plain"),editPaketRequest.deskripsi)
         var produk = RequestBody.create(MediaType.parse("text/plain"),editPaketRequest.produk)
         var harga = RequestBody.create(MediaType.parse("text/plain"),editPaketRequest.harga)
-        var fotoprodukFile = File(editPaketRequest.foto?.path)
-        var fotoprodukRequestBody = RequestBody.create(MediaType.parse("multipart/form-data"),fotoprodukFile)
-        val fotoprodukParms = MultipartBody.Part.createFormData("foto",fotoprodukFile.name, fotoprodukRequestBody)
 
-        val disposable = HttpClient.getInstance().getApi()!!.updateproduk(
-            editPaketRequest.id,
-            namapaket,
-            deskripsi,
-            produk,
-            harga,
-            fotoprodukParms
-        )
-            .subscribeOn(Schedulers.io())
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribe({
-                this.view.dismissLoading()
+        if (editPaketRequest.foto == null) {
+            val disposable = HttpClient.getInstance().getApi()!!.updateproduk(
+                editPaketRequest.id,
+                namapaket,
+                deskripsi,
+                produk,
+                harga,
+                null
+            )
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe({
+                    this.view.dismissLoading()
 
-                if (it.message.equals("Berhasil Update Produk")) {
-                    this.view.onEditPaketSuccess(it.message.toString())
-                }else {
-                    this.view.onEditPaketFailed(it.message)
-                }
-            },{
-                this.view.dismissLoading()
-                this.view.onEditPaketFailed(it.getErrorBodyMessage())
-            })
-        mCompositeDisposable!!.add(disposable)
+                    if (it.message.equals("Berhasil Update Produk")) {
+                        this.view.onEditPaketSuccess(it.message.toString())
+                    }else {
+                        this.view.onEditPaketFailed(it.message)
+                    }
+                },{
+                    this.view.dismissLoading()
+                    this.view.onEditPaketFailed(it.getErrorBodyMessage())
+                })
+            mCompositeDisposable!!.add(disposable)
+
+        } else {
+
+            var fotoprodukFile = File(editPaketRequest.foto?.path)
+            var fotoprodukRequestBody = RequestBody.create(MediaType.parse("multipart/form-data"),fotoprodukFile)
+            val fotoprodukParms = MultipartBody.Part.createFormData("foto",fotoprodukFile.name, fotoprodukRequestBody)
+
+            val disposable = HttpClient.getInstance().getApi()!!.updateproduk(
+                editPaketRequest.id,
+                namapaket,
+                deskripsi,
+                produk,
+                harga,
+                fotoprodukParms
+            )
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe({
+                    this.view.dismissLoading()
+
+                    if (it.message.equals("Berhasil Update Produk")) {
+                        this.view.onEditPaketSuccess(it.message.toString())
+                    }else {
+                        this.view.onEditPaketFailed(it.message)
+                    }
+                },{
+                    this.view.dismissLoading()
+                    this.view.onEditPaketFailed(it.getErrorBodyMessage())
+                })
+            mCompositeDisposable!!.add(disposable)
+        }
     }
 
     override fun subscribe() {

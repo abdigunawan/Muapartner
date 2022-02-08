@@ -33,45 +33,82 @@ class SignUpPresenter (private val view: SignUpContract.View) : SignUpContract.P
         var kota = RequestBody.create(MediaType.parse("text/plain"),registerRequest.kota)
         var role = RequestBody.create(MediaType.parse("text/plain"),registerRequest.roles)
 
-
-        var profileImageFile = File(registerRequest.gambar?.path)
-        var profileImageRequestBody = RequestBody.create(MediaType.parse("multipart/form-data"),profileImageFile)
-        val profileImageParms = MultipartBody.Part.createFormData("gambar",profileImageFile.name, profileImageRequestBody)
         var sertifikatImageFile = File(registerRequest.upload_sertifikat?.path)
         var sertifikatImageRequestBody = RequestBody.create(MediaType.parse("multipart/form-data"),sertifikatImageFile)
         val sertifikatParms = MultipartBody.Part.createFormData("upload_sertifikat",sertifikatImageFile.name, sertifikatImageRequestBody)
 
-        val disposable = HttpClient.getInstance().getApi()!!.register(
-            name,
-            email,
-            password,
-            nohp,
-            alamat,
-            norumah,
-            kota,
-            profileImageParms,
-            sertifikatParms,
-            role
+        if (registerRequest.gambar == null) {
+            val disposable = HttpClient.getInstance().getApi()!!.register(
+                name,
+                email,
+                password,
+                nohp,
+                alamat,
+                norumah,
+                kota,
+                null,
+                sertifikatParms,
+                role
 
-        )
-            .subscribeOn(Schedulers.io())
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribe(
-                {
-                    view.dismissLoading()
+            )
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(
+                    {
+                        view.dismissLoading()
 
-                    if (it.message.equals("Berhasil Register")) {
-                        it.x0.let { it1 -> view.onRegisterSuccess(it1 as X0, viewParams) }
-                    } else {
-                        view.onRegisterFailed(it.message)
-                    }
+                        if (it.message.equals("Berhasil Register")) {
+                            it.x0.let { it1 -> view.onRegisterSuccess(it1 as X0, viewParams) }
+                        } else {
+                            view.onRegisterFailed(it.message)
+                        }
 
-                },
-                {
-                    view.dismissLoading()
-                    view.onRegisterFailed(it.getErrorBodyMessage())
-                })
-        mCompositeDisposable!!.add(disposable)
+                    },
+                    {
+                        view.dismissLoading()
+                        view.onRegisterFailed(it.getErrorBodyMessage())
+                    })
+            mCompositeDisposable!!.add(disposable)
+        } else {
+
+            var profileImageFile = File(registerRequest.gambar?.path)
+            var profileImageRequestBody = RequestBody.create(MediaType.parse("multipart/form-data"),profileImageFile)
+            val profileImageParms = MultipartBody.Part.createFormData("gambar",profileImageFile.name, profileImageRequestBody)
+
+            
+            val disposable = HttpClient.getInstance().getApi()!!.register(
+                name,
+                email,
+                password,
+                nohp,
+                alamat,
+                norumah,
+                kota,
+                profileImageParms,
+                sertifikatParms,
+                role
+
+            )
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(
+                    {
+                        view.dismissLoading()
+
+                        if (it.message.equals("Berhasil Register")) {
+                            it.x0.let { it1 -> view.onRegisterSuccess(it1 as X0, viewParams) }
+                        } else {
+                            view.onRegisterFailed(it.message)
+                        }
+
+                    },
+                    {
+                        view.dismissLoading()
+                        view.onRegisterFailed(it.getErrorBodyMessage())
+                    })
+            mCompositeDisposable!!.add(disposable)
+
+        }
     }
 
     override fun subscribe() {
