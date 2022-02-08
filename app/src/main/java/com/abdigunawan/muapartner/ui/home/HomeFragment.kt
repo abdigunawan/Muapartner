@@ -91,8 +91,7 @@ class HomeFragment : Fragment(),HomeAdapter.ItemAdapterCallback {
     }
 
     override fun onClick(v: View, data: HomeModel) {
-        val detailmua = Intent(activity, DetailBookingActivity::class.java)
-        startActivity(detailmua)
+        Toast.makeText(context, "kamu klik" + data, Toast.LENGTH_SHORT).show()
     }
 
 }

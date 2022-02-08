@@ -99,6 +99,7 @@ class EditPaketActivity : AppCompatActivity(),EditPaketContract.View {
         val profilMua = BuildConfig.BASE_URL+"assets/img/mua/paket/" + produk.foto
         Glide.with(this)
             .load(profilMua)
+            .apply(RequestOptions.centerCropTransform())
             .into(ivPaketFoto)
 
         progressDialog = Dialog(this)

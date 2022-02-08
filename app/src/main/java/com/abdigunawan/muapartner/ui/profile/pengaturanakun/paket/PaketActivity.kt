@@ -40,15 +40,6 @@ class PaketActivity : AppCompatActivity(),PaketAdapter.ItemAdapterCallback, Pake
         presenter.getPaket()
     }
 
-    override fun onStart() {
-        super.onStart()
-        presenter.getPaket()
-    }
-
-    override fun onPause() {
-        super.onPause()
-        presenter.getPaket()
-    }
 
     private fun initView() {
         progressDialog = Dialog(this)

@@ -2,6 +2,7 @@ package com.abdigunawan.muapartner.network
 
 import com.abdigunawan.muapartner.model.response.login.LoginResponse
 import com.abdigunawan.muapartner.model.response.login.X0
+import com.abdigunawan.muapartner.model.response.profile.logout.LogOutResponse
 import com.abdigunawan.muapartner.model.response.profile.paket.AddPaketResponse
 import com.abdigunawan.muapartner.model.response.profile.paket.EditPaketResponse
 import com.abdigunawan.muapartner.model.response.profile.paket.GetPaketResponse
@@ -43,6 +44,9 @@ interface Endpoint {
         @Part("harga") harga: RequestBody,
         @Part foto: MultipartBody.Part
     ) : Observable<AddPaketResponse>
+
+    @POST("logout")
+    fun logout() : Observable<LogOutResponse>
 
     @Multipart
     @POST("produk/update/{id}")

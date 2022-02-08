@@ -65,7 +65,7 @@
                 android:textColor="#020202"
                 android:background="@drawable/shape_rectangle_outline_8_020202"
                 android:hint="Masukkan Emailmu"
-                android:inputType="textShortMessage"
+                android:inputType="textEmailAddress"
                 android:padding="10dp" />
 
             <TextView

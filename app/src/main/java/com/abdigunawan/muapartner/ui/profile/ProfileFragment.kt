@@ -1,15 +1,20 @@
 package com.abdigunawan.muapartner.ui.profile
 
+import android.app.Dialog
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import cn.pedant.SweetAlert.SweetAlertDialog
 import com.abdigunawan.muapartner.BuildConfig
 import com.abdigunawan.muapartner.MuaPartner
 import com.abdigunawan.muapartner.R
 import com.abdigunawan.muapartner.model.response.login.User
+import com.abdigunawan.muapartner.ui.MainActivity
+import com.abdigunawan.muapartner.ui.auth.AuthActivity
+import com.abdigunawan.muapartner.ui.auth.signin.SignInFragment
 import com.abdigunawan.muapartner.ui.profile.makeupme.AboutActivity
 import com.abdigunawan.muapartner.ui.profile.makeupme.BeriMasukanActivity
 import com.abdigunawan.muapartner.ui.profile.pengaturanakun.EditPasswordActivity
@@ -20,8 +25,12 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.fragment_profile.*
+import kotlin.math.log
 
-class ProfileFragment : Fragment() {
+class ProfileFragment : Fragment(),LogoutContract.View {
+
+    lateinit var presenter : LogoutPresenter
+    var progressDialog: Dialog? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -35,9 +44,22 @@ class ProfileFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
+        presenter = LogoutPresenter(this)
         initUser()
         initListener()
+        initView()
 
+    }
+
+    private fun initView() {
+        progressDialog = Dialog(requireContext())
+        val dialogLayout = layoutInflater.inflate(R.layout.dialog_loader, null)
+
+        progressDialog?.let {
+            it.setContentView(dialogLayout)
+            it.setCancelable(false)
+            it.window?.setBackgroundDrawableResource(android.R.color.transparent)
+        }
     }
 
     private fun initListener() {
@@ -74,6 +96,21 @@ class ProfileFragment : Fragment() {
             startActivity(beriMasukan)
         }
 
+        btnLogout.setOnClickListener {
+
+            SweetAlertDialog(activity, SweetAlertDialog.WARNING_TYPE)
+                .setTitleText("Logout")
+                .setContentText("Kamu Yakin Ingin Logout?")
+                .setCancelButton("Batal", SweetAlertDialog.OnSweetClickListener {
+                    it.dismissWithAnimation()
+                })
+                .setConfirmButton("Yakin", SweetAlertDialog.OnSweetClickListener {
+                    presenter.Logout()
+                })
+                .show()
+
+        }
+
     }
 
     private fun initUser() {
@@ -90,5 +127,29 @@ class ProfileFragment : Fragment() {
 
         tvMuaLogin.setText(userResponse.name)
         tvEmailLogin.setText(userResponse.email)
+    }
+
+    override fun onLogoutSuccess(message: String) {
+        MuaPartner.getApp().setToken(null)
+        MuaPartner.getApp().setUser(null)
+
+        val login = Intent(activity, AuthActivity::class.java)
+        startActivity(login)
+        activity?.finish()
+    }
+
+    override fun onLogoutFailed(message: String) {
+        SweetAlertDialog(activity, SweetAlertDialog.ERROR_TYPE)
+            .setTitleText("Gagal Log Out")
+            .setContentText(message)
+            .show()
+    }
+
+    override fun showLoading() {
+        progressDialog?.show()
+    }
+
+    override fun dismissLoading() {
+        progressDialog?.dismiss()
     }
 }

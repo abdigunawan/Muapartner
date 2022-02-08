@@ -24,7 +24,7 @@ class MuaPartner : MultiDexApplication() {
         return PreferenceManager.getDefaultSharedPreferences(this)
     }
 
-    fun setToken(token : String) {
+    fun setToken(token: String?) {
         getPreferences().edit().putString("PREFERENCES_TOKEN", token).apply()
         HttpClient.getInstance().buildRetrofitClient(token)
     }
@@ -33,7 +33,7 @@ class MuaPartner : MultiDexApplication() {
         return getPreferences().getString("PREFERENCES_TOKEN", null)
     }
 
-    fun setUser(user : String) {
+    fun setUser(user: String?) {
         getPreferences().edit().putString("PREFERENCES_USER", user).apply()
 //        HttpClient.getInstance().buildRetrofitClient(user)
     }
