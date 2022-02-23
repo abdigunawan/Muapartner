@@ -110,6 +110,16 @@ class HomeFragment : Fragment(),HomeAdapter.ItemAdapterCallback, HomeContract.Vi
         var layoutManager : RecyclerView.LayoutManager = LinearLayoutManager(activity)
         rcPesananMasuk.layoutManager = layoutManager
         rcPesananMasuk.adapter = adapter
+
+        if (homeResponse.transaksiuser.isNullOrEmpty()) {
+            ivKosong.visibility = View.VISIBLE
+            tvKosong.visibility = View.VISIBLE
+            textView4.visibility = View.GONE
+        } else {
+            textView4.visibility = View.VISIBLE
+            ivKosong.visibility = View.GONE
+            tvKosong.visibility = View.GONE
+        }
     }
 
     override fun onHomeFailed(message: String) {

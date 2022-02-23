@@ -1,5 +1,6 @@
 package com.abdigunawan.muapartner.ui.home.detail
 
+import android.app.Dialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -8,6 +9,7 @@ import cn.pedant.SweetAlert.SweetAlertDialog
 import com.abdigunawan.muapartner.BuildConfig
 import com.abdigunawan.muapartner.R
 import com.abdigunawan.muapartner.model.response.home.Transaksiuser
+import com.abdigunawan.muapartner.ui.MainActivity
 import com.abdigunawan.muapartner.utils.Helpers.formatPrice
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
@@ -17,8 +19,10 @@ import kotlinx.android.synthetic.main.item_pesananmasuk.view.*
 import kotlinx.android.synthetic.main.layout_toolbar.*
 import java.text.SimpleDateFormat
 
-class DetailBookingActivity : AppCompatActivity() {
+class DetailBookingActivity : AppCompatActivity(),DeleteContract.View {
 
+    lateinit var presenter : DeletePresenter
+    var progressDialog: Dialog? = null
     private val detailtransaksi by lazy { intent.getSerializableExtra("detailtransaksi") as Transaksiuser }
     val formatDate = SimpleDateFormat("dd MMMM YYYY")
     val formatHour = SimpleDateFormat("HH.mm")
@@ -26,10 +30,21 @@ class DetailBookingActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail_booking)
-
+        presenter = DeletePresenter(this)
         initToolbar()
         initListener()
         initDetail()
+        initView()
+    }
+
+    private fun initView() {
+        progressDialog = Dialog(this)
+        val dialogLayout = layoutInflater.inflate(R.layout.dialog_loader, null)
+        progressDialog?.let {
+            it.setContentView(dialogLayout)
+            it.setCancelable(false)
+            it.window?.setBackgroundDrawableResource(android.R.color.transparent)
+        }
     }
 
     private fun initToolbar() {
@@ -81,11 +96,31 @@ class DetailBookingActivity : AppCompatActivity() {
                     it.dismissWithAnimation()
                 })
                 .setConfirmButton("Yakin", SweetAlertDialog.OnSweetClickListener {
-//                    presenter.deletePaket(produk.id.toString())
-                    Toast.makeText(this, "Klik", Toast.LENGTH_SHORT).show()
+                    presenter.batalTransaksi(detailtransaksi.id.toString(),null)
                 })
                 .show()
         }
 
+    }
+
+    override fun onBatalSuccess(message: String) {
+        val home = Intent(this, MainActivity::class.java)
+        startActivity(home)
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onBatalfailed(message: String) {
+        SweetAlertDialog(this, SweetAlertDialog.ERROR_TYPE)
+            .setTitleText("Opss!!")
+            .setContentText(message)
+            .show()
+    }
+
+    override fun showLoading() {
+        progressDialog?.show()
+    }
+
+    override fun dismissLoading() {
+        progressDialog?.dismiss()
     }
 }

@@ -4,6 +4,7 @@ import com.abdigunawan.muapartner.model.response.editpassword.EditPasswordRespon
 import com.abdigunawan.muapartner.model.response.editprofil.EditProfilResponse
 import com.abdigunawan.muapartner.model.response.editprofil.Ubahprofile
 import com.abdigunawan.muapartner.model.response.home.HomeResponse
+import com.abdigunawan.muapartner.model.response.home.batalkan.BatalkanPemesananResponse
 import com.abdigunawan.muapartner.model.response.home.konfirmasi.SuccessConfirmResponse
 import com.abdigunawan.muapartner.model.response.login.LoginResponse
 import com.abdigunawan.muapartner.model.response.login.X0
@@ -109,5 +110,14 @@ interface Endpoint {
         @Field("lokasi")lokasi:String,
         @Field("catatan")catatan:String,
     ) : Observable<SuccessConfirmResponse>
+
+    @FormUrlEncoded
+    @POST("batalkan/{id}")
+    fun batalkanTransaksi(
+        @Path(value = "id") transaksiId:String,
+        @Field("status")status:String?,
+    ) : Observable<BatalkanPemesananResponse>
+
+
 
 }
