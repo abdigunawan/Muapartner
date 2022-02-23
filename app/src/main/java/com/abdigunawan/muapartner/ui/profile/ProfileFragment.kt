@@ -12,20 +12,16 @@ import com.abdigunawan.muapartner.BuildConfig
 import com.abdigunawan.muapartner.MuaPartner
 import com.abdigunawan.muapartner.R
 import com.abdigunawan.muapartner.model.response.login.User
-import com.abdigunawan.muapartner.ui.MainActivity
 import com.abdigunawan.muapartner.ui.auth.AuthActivity
-import com.abdigunawan.muapartner.ui.auth.signin.SignInFragment
 import com.abdigunawan.muapartner.ui.profile.makeupme.AboutActivity
-import com.abdigunawan.muapartner.ui.profile.makeupme.BeriMasukanActivity
-import com.abdigunawan.muapartner.ui.profile.pengaturanakun.EditPasswordActivity
+import com.abdigunawan.muapartner.ui.profile.makeupme.saran.BeriMasukanActivity
+import com.abdigunawan.muapartner.ui.profile.pengaturanakun.editpassword.EditPasswordActivity
 import com.abdigunawan.muapartner.ui.profile.pengaturanakun.EditProfilActivity
-import com.abdigunawan.muapartner.ui.profile.pengaturanakun.EditProfilPhotoActivity
 import com.abdigunawan.muapartner.ui.profile.pengaturanakun.paket.PaketActivity
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.fragment_profile.*
-import kotlin.math.log
 
 class ProfileFragment : Fragment(),LogoutContract.View {
 
@@ -74,10 +70,6 @@ class ProfileFragment : Fragment(),LogoutContract.View {
             startActivity(editPassword)
         }
 
-        layoutUbahFotoProfil.setOnClickListener {
-            val editFoto = Intent(activity, EditProfilPhotoActivity::class.java)
-            startActivity(editFoto)
-        }
 
         layoutAturPaket.setOnClickListener {
             val aturPaket = Intent(activity, PaketActivity::class.java)

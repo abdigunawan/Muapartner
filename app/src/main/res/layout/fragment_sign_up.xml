@@ -181,7 +181,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
                 android:layout_marginBottom="32dp"
-                android:text="Daftar Sekarang"
+                android:text="Lanjutkan"
                 android:textAllCaps="false"
                 android:textColor="@color/white" />
 

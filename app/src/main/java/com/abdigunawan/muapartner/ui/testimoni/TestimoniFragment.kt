@@ -1,21 +1,17 @@
 package com.abdigunawan.muapartner.ui.testimoni
 
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.abdigunawan.muapartner.R
-import com.abdigunawan.muapartner.databinding.FragmentOrderBinding
-import com.abdigunawan.muapartner.model.dummy.HomeModel
 import com.abdigunawan.muapartner.model.dummy.MuaTestimoniModel
-import com.abdigunawan.muapartner.ui.home.HomeAdapter
-import kotlinx.android.synthetic.main.fragment_home.*
+import kotlinx.android.synthetic.main.fragment_testimoni.*
 import kotlinx.android.synthetic.main.layout_toolbar.*
 
 class TestimoniFragment : Fragment(),TestimoniAdapter.ItemAdapterCallback {
@@ -38,8 +34,8 @@ class TestimoniFragment : Fragment(),TestimoniAdapter.ItemAdapterCallback {
         initToolbar()
         var adapter = TestimoniAdapter(pesananList, this)
         var layoutManager : RecyclerView.LayoutManager = LinearLayoutManager(activity)
-        rcPesananMasuk.layoutManager = layoutManager
-        rcPesananMasuk.adapter = adapter
+        rcTestimoni.layoutManager = layoutManager
+        rcTestimoni.adapter = adapter
     }
 
     fun initToolbar () {
@@ -60,7 +56,7 @@ class TestimoniFragment : Fragment(),TestimoniAdapter.ItemAdapterCallback {
     }
 
     override fun onClick(v: View, data: MuaTestimoniModel) {
-        TODO("Not yet implemented")
+        Toast.makeText(context,""+data,Toast.LENGTH_SHORT).show()
     }
 
 }

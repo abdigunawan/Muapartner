@@ -2,47 +2,41 @@ package com.abdigunawan.muapartner.ui.home.detail
 
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import java.util.*
-import android.view.ViewGroup
 import android.widget.Toast
 import com.abdigunawan.muapartner.R
-import kotlinx.android.synthetic.main.fragment_atur_jadwal.*
+import kotlinx.android.synthetic.main.activity_atur_jadwal.*
+import kotlinx.android.synthetic.main.layout_toolbar.*
 import java.text.SimpleDateFormat
+import java.util.*
 
-class AturJadwalFragment : Fragment() {
+class AturJadwalActivity : AppCompatActivity() {
 
     val formatDate = SimpleDateFormat("dd MMMM YYYY")
     val formatHour = SimpleDateFormat("HH.mm")
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_atur_jadwal, container, false)
-
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_atur_jadwal)
         getTanggal()
         getJam()
+        initListener()
+        initToolbar()
+    }
+
+    private fun initListener() {
 
         btnKonfirmasi.setOnClickListener {
-            Toast.makeText(context, "Jadwal Makeup : " + etTanggal.text.toString() + ", " + etJam.text.toString() + "\nCatatan : " + etCatatan.text.toString(), Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Jadwal Makeup : " + etTanggal.text.toString() + ", " + etJam.text.toString() + "\nCatatan : " + etCatatan.text.toString(), Toast.LENGTH_SHORT).show()
         }
-
     }
 
     private fun getTanggal() {
         etTanggal.setOnClickListener {
             val getDate = Calendar.getInstance()
-            val dPickerDialog = DatePickerDialog(requireContext(),DatePickerDialog.OnDateSetListener { datePicker, i, i2, i3 ->
+            val dPickerDialog = DatePickerDialog(this,
+                DatePickerDialog.OnDateSetListener { datePicker, i, i2, i3 ->
 
                 val c = Calendar.getInstance()
                 c.set(Calendar.YEAR, i)
@@ -60,7 +54,7 @@ class AturJadwalFragment : Fragment() {
     private fun getJam() {
         etJam.setOnClickListener {
             val gethour = Calendar.getInstance()
-            val tsl = TimePickerDialog(requireContext(), TimePickerDialog.OnTimeSetListener { timePicker, i, i2 ->
+            val tsl = TimePickerDialog(this, TimePickerDialog.OnTimeSetListener { timePicker, i, i2 ->
                 val cal = Calendar.getInstance()
                 cal.set(Calendar.HOUR_OF_DAY, i)
                 cal.set(Calendar.MINUTE, i2)
@@ -73,5 +67,11 @@ class AturJadwalFragment : Fragment() {
         }
     }
 
-}
+    private fun initToolbar() {
+            toolbar.title = "Atur Jadwal Ketemu"
+            toolbar.subtitle = "Temukan Wajah Terbaikmu"
+            toolbar.navigationIcon = resources.getDrawable(R.drawable.ic_arrow_back_020202, null)
+            toolbar.setNavigationOnClickListener { onBackPressed() }
+    }
 
+}

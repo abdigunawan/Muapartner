@@ -11,10 +11,12 @@
         <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/drawable/bottom_nav_icon_order_selector.xml" value="0.2578125" />
         <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/drawable/bottom_nav_icon_profile_selector.xml" value="0.2578125" />
         <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/drawable/bottom_nav_icon_testimonial_selector.xml" value="0.2578125" />
+        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/drawable/ic__04_error_pana.xml" value="0.231" />
         <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/drawable/ic_alarmclock_fill.xml" value="0.2578125" />
         <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/drawable/ic_arrow_back_fff.xml" value="0.2578125" />
         <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/drawable/ic_calender.xml" value="0.2578125" />
         <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/drawable/ic_dropdown.xml" value="0.2578125" />
+        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/drawable/ic_empty_cuate.xml" value="0.231" />
         <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/drawable/ic_emptyorder.xml" value="0.16354166666666667" />
         <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/drawable/ic_hello.xml" value="0.13541666666666666" />
         <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/drawable/ic_home_normal.xml" value="0.2578125" />
@@ -39,19 +41,20 @@
         <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/drawable/unselected_onboarding.xml" value="0.13541666666666666" />
         <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/layout/activity_about.xml" value="0.4" />
         <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/layout/activity_add_paket.xml" value="0.264" />
+        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/layout/activity_atur_jadwal.xml" value="0.24166666666666667" />
         <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/layout/activity_auth.xml" value="0.24166666666666667" />
         <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/layout/activity_beri_masukan.xml" value="0.2" />
-        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/layout/activity_detail_booking.xml" value="0.4" />
+        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/layout/activity_detail_booking.xml" value="0.264" />
         <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/layout/activity_detail_paket.xml" value="0.264" />
         <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/layout/activity_detail_paket2.xml" value="0.24166666666666667" />
         <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/layout/activity_edit_paket.xml" value="0.24166666666666667" />
         <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/layout/activity_edit_password.xml" value="0.264" />
-        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/layout/activity_edit_profil.xml" value="0.4" />
+        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/layout/activity_edit_profil.xml" value="0.264" />
         <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/layout/activity_edit_profil_photo.xml" value="0.264" />
         <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/layout/activity_login.xml" value="0.264" />
-        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/layout/activity_main.xml" value="0.4" />
+        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/layout/activity_on_boarding.xml" value="0.152" />
-        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/layout/activity_paket.xml" value="0.2" />
+        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/layout/activity_paket.xml" value="0.264" />
         <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/layout/activity_sign_in.xml" value="0.264" />
         <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/layout/activity_sign_up.xml" value="0.4" />
         <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/layout/activity_sign_up_success.xml" value="0.24166666666666667" />
@@ -64,16 +67,16 @@
         <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/layout/fragment_order.xml" value="0.264" />
         <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/layout/fragment_paket.xml" value="0.24166666666666667" />
         <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/layout/fragment_paket_detail.xml" value="0.24166666666666667" />
-        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/layout/fragment_profile.xml" value="0.264" />
+        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/layout/fragment_profile.xml" value="0.4" />
         <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/layout/fragment_sign_in.xml" value="0.2" />
-        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/layout/fragment_sign_up.xml" value="0.2" />
+        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/layout/fragment_sign_up.xml" value="0.4" />
         <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/layout/fragment_sign_up_success.xml" value="0.2" />
         <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/layout/fragment_sign_up_verif.xml" value="0.264" />
         <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/layout/fragment_terima_booking.xml" value="0.24166666666666667" />
         <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/layout/fragment_testimoni.xml" value="0.264" />
         <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/layout/item_paket_horizontal.xml" value="0.536" />
         <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/layout/item_paket_vertical.xml" value="0.264" />
-        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/layout/item_pesananmasuk.xml" value="0.6" />
+        <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/layout/item_pesananmasuk.xml" value="0.536" />
         <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/layout/item_testimoni_horizontal.xml" value="0.4" />
         <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/layout/layout_spinner.xml" value="0.24166666666666667" />
         <entry key="..\:/Users/abdig/AndroidStudioProjects/Muapartner/app/src/main/res/layout/layout_toolbar.xml" value="0.23641304347826086" />

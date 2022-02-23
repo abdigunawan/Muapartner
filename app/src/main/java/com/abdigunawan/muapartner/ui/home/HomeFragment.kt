@@ -1,5 +1,6 @@
 package com.abdigunawan.muapartner.ui.home
 
+import android.app.Dialog
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -10,10 +11,13 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import cn.pedant.SweetAlert.SweetAlertDialog
 import com.abdigunawan.muapartner.BuildConfig
 import com.abdigunawan.muapartner.MuaPartner
 import com.abdigunawan.muapartner.R
 import com.abdigunawan.muapartner.model.dummy.HomeModel
+import com.abdigunawan.muapartner.model.response.home.HomeResponse
+import com.abdigunawan.muapartner.model.response.home.Transaksiuser
 import com.abdigunawan.muapartner.model.response.login.User
 import com.abdigunawan.muapartner.ui.home.detail.DetailBookingActivity
 import com.bumptech.glide.Glide
@@ -24,9 +28,11 @@ import kotlinx.android.synthetic.main.fragment_home.tvMuaLogin
 import java.util.*
 import kotlin.collections.ArrayList
 
-class HomeFragment : Fragment(),HomeAdapter.ItemAdapterCallback {
+class HomeFragment : Fragment(),HomeAdapter.ItemAdapterCallback, HomeContract.View {
 
-    private var pesananList : ArrayList<HomeModel> = ArrayList()
+    private var adapter : HomeAdapter? = null
+    var progressDialog: Dialog? = null
+    private lateinit var presenter: HomePresenter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,24 +45,28 @@ class HomeFragment : Fragment(),HomeAdapter.ItemAdapterCallback {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        initDataDummy()
         ucapanMua()
         initUser()
-        var adapter = HomeAdapter(pesananList, this)
-        var layoutManager : RecyclerView.LayoutManager = LinearLayoutManager(activity)
-        rcPesananMasuk.layoutManager = layoutManager
-        rcPesananMasuk.adapter = adapter
+        initView()
+        presenter = HomePresenter(this)
+        presenter.getHome()
     }
 
-    fun initDataDummy() {
-        pesananList = ArrayList()
-        pesananList.add(HomeModel("Natalya Tolla", "Paket Wisuda", "", "Daya, Paccerakkang", "9 Nov, 13.00-14.00"))
-        pesananList.add(HomeModel("Adella Dewi", "Paket Nikah", "", "Perintis Kemerdekaan 7", "10 Nov, 9.00-12.00"))
-        pesananList.add(HomeModel("Nurul Fadillah", "Paket Nikah","", "Jalan Poros Bone Makassar","10 Nov, 13.00-14.00"))
-        pesananList.add(HomeModel("Natalya Tolla", "Paket Wisuda", "", "Daya, Paccerakkang", "9 Nov, 13.00-14.00"))
-        pesananList.add(HomeModel("Adella Dewi", "Paket Nikah", "", "Perintis Kemerdekaan 7","10 Nov, 9.00-12.00"))
-        pesananList.add(HomeModel("Nurul Fadillah", "Paket Nikah" ,"", "Jalan Poros Bone Makassar", "10 Nov, 13.00-14.00"))
+    override fun onResume() {
+        super.onResume()
+        presenter = HomePresenter(this)
+        presenter.getHome()
+    }
 
+    private fun initView() {
+        progressDialog = Dialog(requireContext())
+        val dialogLayout = layoutInflater.inflate(R.layout.dialog_loader, null)
+
+        progressDialog?.let {
+            it.setContentView(dialogLayout)
+            it.setCancelable(false)
+            it.window?.setBackgroundDrawableResource(android.R.color.transparent)
+        }
     }
 
     private fun initUser() {
@@ -90,8 +100,31 @@ class HomeFragment : Fragment(),HomeAdapter.ItemAdapterCallback {
         }
     }
 
-    override fun onClick(v: View, data: HomeModel) {
-        Toast.makeText(context, "kamu klik" + data, Toast.LENGTH_SHORT).show()
+    override fun onClick(v: View, data: Transaksiuser) {
+        val detail = Intent(activity, DetailBookingActivity::class.java).putExtra("detailtransaksi", data)
+        startActivity(detail)
+    }
+
+    override fun onHomeSuccess(homeResponse: HomeResponse) {
+        adapter = HomeAdapter(homeResponse.transaksiuser, this)
+        var layoutManager : RecyclerView.LayoutManager = LinearLayoutManager(activity)
+        rcPesananMasuk.layoutManager = layoutManager
+        rcPesananMasuk.adapter = adapter
+    }
+
+    override fun onHomeFailed(message: String) {
+        SweetAlertDialog(activity, SweetAlertDialog.ERROR_TYPE)
+            .setTitleText("OPSSSS!!!")
+            .setContentText(message)
+            .show()
+    }
+
+    override fun showLoading() {
+        progressDialog?.show()
+    }
+
+    override fun dismissLoading() {
+        progressDialog?.dismiss()
     }
 
 }
