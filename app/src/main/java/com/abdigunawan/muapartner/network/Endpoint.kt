@@ -1,12 +1,14 @@
 package com.abdigunawan.muapartner.network
 
+import com.abdigunawan.muapartner.model.response.editpassword.EditPasswordResponse
+import com.abdigunawan.muapartner.model.response.home.HomeResponse
 import com.abdigunawan.muapartner.model.response.login.LoginResponse
 import com.abdigunawan.muapartner.model.response.login.X0
 import com.abdigunawan.muapartner.model.response.profile.logout.LogOutResponse
 import com.abdigunawan.muapartner.model.response.profile.paket.AddPaketResponse
 import com.abdigunawan.muapartner.model.response.profile.paket.EditPaketResponse
 import com.abdigunawan.muapartner.model.response.profile.paket.GetPaketResponse
-import com.abdigunawan.muapartner.model.response.profile.paket.Produk
+import com.abdigunawan.muapartner.model.response.saran.BeriMasukanResponse
 import io.reactivex.Observable
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
@@ -66,4 +68,20 @@ interface Endpoint {
 
     @GET("produk/get")
     fun getproduk() : Observable<GetPaketResponse>
+
+    @GET("transaksi/show/")
+    fun getHome() : Observable<HomeResponse>
+
+    @FormUrlEncoded
+    @POST("ubahpassword")
+    fun editpassword(@Field("passwordlama")passwordlama:String,
+                     @Field("passwordbaru")passwordbaru:String,
+                     @Field("passwordkonfirmasi")passwordkonfirmasi:String) : Observable<EditPasswordResponse>
+
+    @FormUrlEncoded
+    @POST("saran")
+    fun saran(@Field("id_user")id_user:String?,
+              @Field("saran")saran:String) : Observable<BeriMasukanResponse>
+
+
 }
