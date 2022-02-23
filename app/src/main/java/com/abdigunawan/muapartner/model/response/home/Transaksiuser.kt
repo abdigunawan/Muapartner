@@ -1,12 +1,9 @@
 package com.abdigunawan.muapartner.model.response.home
 
-
-import android.os.Parcelable
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
-import kotlinx.android.parcel.Parcelize
+import java.io.Serializable
 
-@Parcelize
 data class Transaksiuser(
     @Expose
     @SerializedName("catatan")
@@ -47,4 +44,4 @@ data class Transaksiuser(
     @Expose
     @SerializedName("user")
     val user: User
-) : Parcelable
+) : Serializable

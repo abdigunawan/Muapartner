@@ -34,11 +34,13 @@ class HomeAdapter (
         fun bind(data: Transaksiuser, itemAdapterCallBack: ItemAdapterCallback) {
             itemView.apply {
 
-                val formatDate = SimpleDateFormat("dd MMMM YYYY")
+                var formatDate = SimpleDateFormat("dd MMM yyyy, hh:mm")
                 tvPelanggan.text = data.user.name
                 tvPaketDipesan.text = data.transaksiuserx.namaPaket
                 tvAlamatKetemu.text = data.user.alamat
-                tvTanggalPesanan.text = formatDate.format(data.tanggalTransaksi)
+                val simpleDateFormat = SimpleDateFormat("yyyy-MM-dd hh:mm:ss")
+                val date = simpleDateFormat.parse(data.tanggalTransaksi)
+                tvTanggalPesanan.text = formatDate.format(date)
                 if (!data.transaksiuserx.foto.isNullOrEmpty()) {
                     val profilMua = BuildConfig.BASE_URL + "assets/img/mua/paket/" + data.transaksiuserx.foto
                     Glide.with(context)

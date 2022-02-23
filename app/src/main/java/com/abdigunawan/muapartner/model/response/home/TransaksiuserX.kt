@@ -3,6 +3,7 @@ package com.abdigunawan.muapartner.model.response.home
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class TransaksiuserX(
     @Expose
@@ -32,4 +33,4 @@ data class TransaksiuserX(
     @Expose
     @SerializedName("updated_at")
     val updatedAt: String
-)
+)  : Serializable

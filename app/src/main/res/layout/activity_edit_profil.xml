@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.profile.pengaturanakun.EditProfilActivity">
+    tools:context=".ui.profile.pengaturanakun.editprofil.EditProfilActivity">
 
     <include
         android:id="@+id/include2"

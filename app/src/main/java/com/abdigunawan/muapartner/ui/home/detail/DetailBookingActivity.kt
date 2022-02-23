@@ -13,6 +13,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import kotlinx.android.synthetic.main.activity_detail_booking.*
 import kotlinx.android.synthetic.main.item_pesananmasuk.*
+import kotlinx.android.synthetic.main.item_pesananmasuk.view.*
 import kotlinx.android.synthetic.main.layout_toolbar.*
 import java.text.SimpleDateFormat
 
@@ -39,6 +40,10 @@ class DetailBookingActivity : AppCompatActivity() {
     }
 
     private fun initDetail(){
+
+        val simpleDateFormat = SimpleDateFormat("yyyy-MM-dd")
+        val simpleHourFormat = SimpleDateFormat("hh:mm:ss")
+
         tvTitle.text = detailtransaksi.transaksiuserx.produk
         tvPrice.formatPrice(detailtransaksi.transaksiuserx.harga.toString())
         textView15.text = detailtransaksi.jumlah
@@ -47,8 +52,10 @@ class DetailBookingActivity : AppCompatActivity() {
         tvPhone.text = detailtransaksi.user.noHp
         tvAddress.text = detailtransaksi.user.alamat
         tvHouseNo.text = detailtransaksi.user.noRumah
-        tvtanggalKetemu.text = formatDate.format(detailtransaksi.tanggalAcara)
-        tvJamKetemu.text = formatHour.format(detailtransaksi.jamAcara)
+        val date = simpleDateFormat.parse(detailtransaksi.tanggalAcara)
+        val hour = simpleHourFormat.parse(detailtransaksi.jamAcara)
+        tvtanggalKetemu.text = formatDate.format(date)
+        tvJamKetemu.text = formatHour.format(hour)
         tvCatatan.text = detailtransaksi.catatan
 
         val fotopaket = BuildConfig.BASE_URL+"assets/img/mua/paket/" + detailtransaksi.transaksiuserx.foto
@@ -69,7 +76,7 @@ class DetailBookingActivity : AppCompatActivity() {
         btnCancel.setOnClickListener {
             SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE)
                 .setTitleText("Opsss!!!")
-                .setContentText("Kamu Yakin Ingin Booking ini?")
+                .setContentText("Kamu Yakin Ingin Batalkan Booking ini?")
                 .setCancelButton("Batal", SweetAlertDialog.OnSweetClickListener {
                     it.dismissWithAnimation()
                 })

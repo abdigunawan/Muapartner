@@ -19,10 +19,10 @@
 
         <ImageView
             android:id="@+id/ivPoster"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="12dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
             android:scaleType="centerCrop"
             android:src="@drawable/iv_paket"
             app:layout_constraintStart_toStartOf="parent"
@@ -34,10 +34,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginBottom="24dp"
             android:text="Paket Wisuda"
+            app:layout_constraintBottom_toBottomOf="@+id/ivPoster"
             app:layout_constraintStart_toEndOf="@+id/ivPoster"
-            app:layout_constraintTop_toBottomOf="@+id/textView7" />
+            app:layout_constraintTop_toTopOf="@+id/ivPoster" />
 
         <TextView
             android:id="@+id/textView7"

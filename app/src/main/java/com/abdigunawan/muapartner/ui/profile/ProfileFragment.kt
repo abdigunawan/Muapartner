@@ -16,7 +16,7 @@ import com.abdigunawan.muapartner.ui.auth.AuthActivity
 import com.abdigunawan.muapartner.ui.profile.makeupme.AboutActivity
 import com.abdigunawan.muapartner.ui.profile.makeupme.saran.BeriMasukanActivity
 import com.abdigunawan.muapartner.ui.profile.pengaturanakun.editpassword.EditPasswordActivity
-import com.abdigunawan.muapartner.ui.profile.pengaturanakun.EditProfilActivity
+import com.abdigunawan.muapartner.ui.profile.pengaturanakun.editprofil.EditProfilActivity
 import com.abdigunawan.muapartner.ui.profile.pengaturanakun.paket.PaketActivity
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
@@ -43,8 +43,14 @@ class ProfileFragment : Fragment(),LogoutContract.View {
         presenter = LogoutPresenter(this)
         initUser()
         initListener()
+
         initView()
 
+    }
+
+    override fun onResume() {
+        super.onResume()
+        initUser()
     }
 
     private fun initView() {
@@ -64,6 +70,7 @@ class ProfileFragment : Fragment(),LogoutContract.View {
             val editProfil = Intent(activity, EditProfilActivity::class.java)
             startActivity(editProfil)
         }
+
 
         layoutUbahPassword.setOnClickListener {
             val editPassword = Intent(activity, EditPasswordActivity::class.java)

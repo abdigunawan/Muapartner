@@ -132,7 +132,6 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginTop="8dp"
-            android:focusable="false"
             android:layout_marginEnd="24dp"
             android:background="@drawable/shape_rectangle_outline_8_020202"
             android:hint="Dimana kamu ingin bertemu?"

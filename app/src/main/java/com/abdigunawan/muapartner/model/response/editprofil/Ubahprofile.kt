@@ -1,11 +1,10 @@
-package com.abdigunawan.muapartner.model.response.home
+package com.abdigunawan.muapartner.model.response.editprofil
 
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
-import java.io.Serializable
 
-data class User(
+data class Ubahprofile(
     @Expose
     @SerializedName("alamat")
     val alamat: String,
@@ -48,4 +47,4 @@ data class User(
     @Expose
     @SerializedName("upload_sertifikat")
     val uploadSertifikat: Any
-)  : Serializable
+)

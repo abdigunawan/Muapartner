@@ -1,7 +1,10 @@
 package com.abdigunawan.muapartner.network
 
 import com.abdigunawan.muapartner.model.response.editpassword.EditPasswordResponse
+import com.abdigunawan.muapartner.model.response.editprofil.EditProfilResponse
+import com.abdigunawan.muapartner.model.response.editprofil.Ubahprofile
 import com.abdigunawan.muapartner.model.response.home.HomeResponse
+import com.abdigunawan.muapartner.model.response.home.konfirmasi.SuccessConfirmResponse
 import com.abdigunawan.muapartner.model.response.login.LoginResponse
 import com.abdigunawan.muapartner.model.response.login.X0
 import com.abdigunawan.muapartner.model.response.profile.logout.LogOutResponse
@@ -83,5 +86,28 @@ interface Endpoint {
     fun saran(@Field("id_user")id_user:String?,
               @Field("saran")saran:String) : Observable<BeriMasukanResponse>
 
+    @Multipart
+    @POST("ubahprofilemua/{id}")
+    fun editprofil(
+        @Path(value = "id") userid:String,
+        @Part("name") name: RequestBody,
+        @Part("email") email: RequestBody,
+        @Part("no_hp") no_hp: RequestBody,
+        @Part("alamat") alamat: RequestBody,
+        @Part("no_rumah") no_rumah: RequestBody,
+        @Part("kota") kota: RequestBody,
+        @Part gambar: MultipartBody.Part?,
+        @Part("roles") roles: RequestBody?
+    ): Observable<EditProfilResponse<Ubahprofile>>
+
+    @FormUrlEncoded
+    @POST("konfirmasi/{id}")
+    fun konfirmasiTransaksi(
+        @Path(value = "id") paketId:String,
+        @Field("tanggal_ketemu")tanggalketemu:String,
+        @Field("jam_ketemu")jamketemu:String,
+        @Field("lokasi")lokasi:String,
+        @Field("catatan")catatan:String,
+    ) : Observable<SuccessConfirmResponse>
 
 }
