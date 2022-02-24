@@ -123,10 +123,7 @@ class HomeFragment : Fragment(),HomeAdapter.ItemAdapterCallback, HomeContract.Vi
     }
 
     override fun onHomeFailed(message: String) {
-        SweetAlertDialog(activity, SweetAlertDialog.ERROR_TYPE)
-            .setTitleText("OPSSSS!!!")
-            .setContentText(message)
-            .show()
+        Toast.makeText(activity, message, Toast.LENGTH_SHORT).show()
     }
 
     override fun showLoading() {

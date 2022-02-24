@@ -3,6 +3,7 @@ package com.abdigunawan.muapartner.network
 import com.abdigunawan.muapartner.model.response.editpassword.EditPasswordResponse
 import com.abdigunawan.muapartner.model.response.editprofil.EditProfilResponse
 import com.abdigunawan.muapartner.model.response.editprofil.Ubahprofile
+import com.abdigunawan.muapartner.model.response.finishorder.FinishOrderResponse
 import com.abdigunawan.muapartner.model.response.home.HomeResponse
 import com.abdigunawan.muapartner.model.response.home.batalkan.BatalkanPemesananResponse
 import com.abdigunawan.muapartner.model.response.home.konfirmasi.SuccessConfirmResponse
@@ -12,6 +13,7 @@ import com.abdigunawan.muapartner.model.response.profile.logout.LogOutResponse
 import com.abdigunawan.muapartner.model.response.profile.paket.AddPaketResponse
 import com.abdigunawan.muapartner.model.response.profile.paket.EditPaketResponse
 import com.abdigunawan.muapartner.model.response.profile.paket.GetPaketResponse
+import com.abdigunawan.muapartner.model.response.riwayatorder.RiwayatOrderResponse
 import com.abdigunawan.muapartner.model.response.saran.BeriMasukanResponse
 import io.reactivex.Observable
 import okhttp3.MultipartBody
@@ -118,6 +120,12 @@ interface Endpoint {
         @Field("status")status:String?,
     ) : Observable<BatalkanPemesananResponse>
 
+    @GET("transaksi/show/all")
+    fun getRiwayatOrder() : Observable<RiwayatOrderResponse>
 
+    @POST("selesai/{id}")
+    fun finishTransaksi(
+        @Path(value = "id") transaksiId:String
+    ) : Observable<FinishOrderResponse>
 
 }

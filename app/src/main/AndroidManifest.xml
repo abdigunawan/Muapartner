@@ -43,7 +43,7 @@
             android:name=".ui.profile.pengaturanakun.paket.PaketActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.profile.pengaturanakun.EditProfilPhotoActivity"
+            android:name=".ui.order.detailsorders.DetailOrderActivity"
             android:exported="false" />
         <activity
             android:name=".ui.profile.pengaturanakun.editpassword.EditPasswordActivity"
@@ -51,6 +51,7 @@
         <activity
             android:name=".ui.profile.pengaturanakun.editprofil.EditProfilActivity"
             android:exported="false" />
+
         <activity
             android:name=".ui.MainActivity"
             android:exported="false"
