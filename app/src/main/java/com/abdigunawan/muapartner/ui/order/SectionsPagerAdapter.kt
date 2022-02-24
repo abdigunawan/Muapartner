@@ -13,8 +13,6 @@ class SectionsPagerAdapter(fm: FragmentManager) :
         fm
     ) {
 
-    var inprogressList: ArrayList<Transaksiuser>? = ArrayList()
-    var pastOrdersList: ArrayList<Transaksiuser>? = ArrayList()
 
     override fun getItem(position: Int): Fragment {
 

@@ -15,6 +15,7 @@ import com.abdigunawan.muapartner.model.response.profile.paket.EditPaketResponse
 import com.abdigunawan.muapartner.model.response.profile.paket.GetPaketResponse
 import com.abdigunawan.muapartner.model.response.riwayatorder.RiwayatOrderResponse
 import com.abdigunawan.muapartner.model.response.saran.BeriMasukanResponse
+import com.abdigunawan.muapartner.model.response.testimoni.TestimoniResponse
 import io.reactivex.Observable
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
@@ -127,5 +128,8 @@ interface Endpoint {
     fun finishTransaksi(
         @Path(value = "id") transaksiId:String
     ) : Observable<FinishOrderResponse>
+
+    @GET("testimoni/show/")
+    fun getTestimoni() : Observable<TestimoniResponse>
 
 }
