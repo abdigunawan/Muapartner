@@ -59,7 +59,7 @@ class DetailOrderActivity : AppCompatActivity(),FinishOrderContract.View {
         val simpleDateFormat = SimpleDateFormat("yyyy-MM-dd")
         val simpleHourFormat = SimpleDateFormat("hh:mm:ss")
 
-        tvTitle.text = detailtransaksi.transaksiuser.produk
+        tvTitle.text = detailtransaksi.transaksiuser.namaPaket
         tvPrice.formatPrice(detailtransaksi.transaksiuser.harga.toString())
         textView15.text = detailtransaksi.jumlah
         tvTotal.formatPrice(detailtransaksi.totalHarga)

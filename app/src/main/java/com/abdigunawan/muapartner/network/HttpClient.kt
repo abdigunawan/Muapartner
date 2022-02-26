@@ -51,7 +51,7 @@ class HttpClient {
             val interceptor = HttpLoggingInterceptor()
             interceptor.level = HttpLoggingInterceptor.Level.BODY
             builder.addInterceptor(interceptor)
-            builder.addInterceptor(ChuckInterceptor(MuaPartner.getApp()))
+//            builder.addInterceptor(ChuckInterceptor(MuaPartner.getApp()))
         }
 
         if (token != null) {

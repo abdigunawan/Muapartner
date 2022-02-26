@@ -13,7 +13,7 @@ android {
         minSdk 21
         targetSdk 32
         versionCode 1
-        versionName "1.0"
+        versionName "2.5"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         flavorDimensions "dev"
@@ -36,7 +36,7 @@ android {
     productFlavors {
         dev {
             applicationId = "com.abdigunawan.muapartner.dev"
-            buildConfigField "String", "BASE_URL", "\"http://192.168.137.136:8000/\""
+            buildConfigField "String", "BASE_URL", "\"http://makeupme.bonekurir.com/\""
         }
     }
     buildFeatures {
